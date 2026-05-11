@@ -11,6 +11,8 @@ export interface Logo {
   weight: number;
   /** brand-ish color for the chip */
   color?: string;
+  /** optional imported image URL — when set, renders the real logo instead of the text chip */
+  image?: string;
 }
 
 export const CLUSTERS: Record<
