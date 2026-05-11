@@ -5,6 +5,7 @@ import { SlideStage } from "@/components/deck/SlideStage";
 import { IntroLogoCloud } from "@/components/deck/slides/IntroLogoCloud";
 import { ClustersSlide } from "@/components/deck/slides/ClustersSlide";
 import { TakeawaysHub } from "@/components/deck/slides/TakeawaysHub";
+import { SummarySlide } from "@/components/deck/slides/SummarySlide";
 import { TakeawayDetail } from "@/components/deck/slides/TakeawayDetail";
 import { FlexaClosing } from "@/components/deck/slides/FlexaClosing";
 import { TAKEAWAYS } from "@/lib/deck-data";
@@ -116,6 +117,7 @@ function Deck() {
       case 1:
         return <ClustersSlide />;
       case 2:
+        return <SummarySlide />;
       case 4:
       case 6:
       case 8:
