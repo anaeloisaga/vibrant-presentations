@@ -67,14 +67,14 @@ export function ClustersSlide() {
           >
             {/* Cluster label tab */}
             <div
-              className="absolute -top-7 left-6 px-5 py-2 rounded-xl deck-display flex items-baseline gap-3"
-              style={{ backgroundColor: c.accent, color: "#FBF6E9", fontSize: 22 }}
+              className="absolute -top-8 left-6 px-6 py-2.5 rounded-xl deck-display flex items-baseline gap-4"
+              style={{ backgroundColor: c.accent, color: "#FBF6E9", fontSize: 28 }}
             >
               <span>{c.label}</span>
               <span
                 className="deck-body"
                 style={{
-                  fontSize: 14,
+                  fontSize: 18,
                   fontWeight: 500,
                   opacity: 0.9,
                 }}
@@ -88,7 +88,7 @@ export function ClustersSlide() {
                 className="deck-body absolute left-6 right-6"
                 style={{
                   bottom: 10,
-                  fontSize: 12,
+                  fontSize: 14,
                   color: "var(--deck-muted)",
                   fontStyle: "italic",
                   lineHeight: 1.3,
@@ -112,42 +112,55 @@ export function ClustersSlide() {
         if (cKey === "full-stack") {
           const hwLed = items.filter((l) => l.subCluster === "hw-led");
           const tariffLed = items.filter((l) => l.subCluster === "tariff-led");
-          const innerTop = r.y + 40;
-          const innerHeight = r.h - 40 - reservedBottom;
-          const rowHeight = innerHeight / 2;
-          const rows: { label: string; logos: typeof items; top: number }[] = [
-            { label: "HW-Led — Sell HW, optimize flexibility", logos: hwLed, top: innerTop },
-            { label: "Tariff-Led — Sell tariff, enroll devices, optimize flex", logos: tariffLed, top: innerTop + rowHeight },
+          const innerTop = r.y + 56;
+          const innerHeight = r.h - 56 - reservedBottom;
+          const colWidth = (r.w - 48 - 24) / 2; // padding + gap between columns
+          const cols: { label: string; logos: typeof items; left: number }[] = [
+            { label: "HW-Led — Sell HW, optimize flex", logos: hwLed, left: r.x + 24 },
+            {
+              label: "Tariff-Led — Sell tariff, enroll devices, optimize flex",
+              logos: tariffLed,
+              left: r.x + 24 + colWidth + 24,
+            },
           ];
           return (
             <div key={`logos-${cKey}`}>
-              {rows.map((row, idx) => (
+              {/* Vertical divider */}
+              <div
+                className="absolute"
+                style={{
+                  left: r.x + 24 + colWidth + 12,
+                  top: innerTop,
+                  width: 1,
+                  height: innerHeight,
+                  borderLeft: "1px dashed rgba(251,246,233,0.18)",
+                }}
+              />
+              {cols.map((col) => (
                 <div
-                  key={row.label}
+                  key={col.label}
                   className="absolute"
                   style={{
-                    left: r.x + 24,
-                    top: row.top,
-                    width: r.w - 48,
-                    height: rowHeight,
-                    borderTop: idx === 1 ? "1px dashed rgba(251,246,233,0.18)" : undefined,
+                    left: col.left,
+                    top: innerTop,
+                    width: colWidth,
+                    height: innerHeight,
                   }}
                 >
                   <div
                     className="deck-body uppercase tracking-[0.2em]"
                     style={{
-                      fontSize: 11,
+                      fontSize: 13,
                       color: "var(--deck-muted)",
                       fontWeight: 600,
-                      marginTop: idx === 1 ? 6 : 0,
-                      marginBottom: 6,
+                      marginBottom: 10,
                     }}
                   >
-                    {row.label}
+                    {col.label}
                   </div>
                   <div className="flex flex-wrap items-center gap-3">
-                    {row.logos.map((logo) => (
-                      <LogoChip key={logo.name} logo={logo} baseSize={20} />
+                    {col.logos.map((logo) => (
+                      <LogoChip key={logo.name} logo={logo} baseSize={26} />
                     ))}
                   </div>
                 </div>
@@ -162,13 +175,13 @@ export function ClustersSlide() {
             className="absolute flex flex-wrap items-center justify-center gap-3"
             style={{
               left: r.x + 24,
-              top: r.y + 60,
+              top: r.y + 70,
               width: r.w - 48,
-              height: r.h - 60 - reservedBottom,
+              height: r.h - 70 - reservedBottom,
             }}
           >
             {items.map((logo) => (
-              <LogoChip key={logo.name} logo={logo} baseSize={22} />
+              <LogoChip key={logo.name} logo={logo} baseSize={32} />
             ))}
           </div>
         );
