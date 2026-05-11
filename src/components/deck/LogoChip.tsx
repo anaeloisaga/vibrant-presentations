@@ -19,7 +19,7 @@ export function LogoChip({ logo, baseSize = 28 }: LogoChipProps) {
       <motion.div
         layoutId={`logo-${logo.name}`}
         transition={{ type: "spring", damping: 22, stiffness: 140 }}
-        className="inline-flex items-center justify-center rounded-2xl px-5 py-3 shadow-lg"
+        className="inline-flex items-center justify-center rounded-2xl px-5 py-3 shadow-lg relative"
         style={{
           backgroundColor: "var(--deck-surface)",
           height,
@@ -31,6 +31,21 @@ export function LogoChip({ logo, baseSize = 28 }: LogoChipProps) {
           style={{ height: height * 0.6, width: "auto", objectFit: "contain", display: "block" }}
           draggable={false}
         />
+        {logo.marker && (
+          <span
+            className="deck-body absolute"
+            style={{
+              top: -6,
+              right: -4,
+              fontSize: fontSize * 0.7,
+              fontWeight: 700,
+              color: "var(--deck-accent)",
+              lineHeight: 1,
+            }}
+          >
+            {logo.marker}
+          </span>
+        )}
       </motion.div>
     );
   }
@@ -38,7 +53,7 @@ export function LogoChip({ logo, baseSize = 28 }: LogoChipProps) {
     <motion.div
       layoutId={`logo-${logo.name}`}
       transition={{ type: "spring", damping: 22, stiffness: 140 }}
-      className="deck-display inline-flex items-center justify-center rounded-2xl px-5 py-2 shadow-lg"
+      className="deck-display inline-flex items-center justify-center rounded-2xl px-5 py-2 shadow-lg relative"
       style={{
         backgroundColor: "var(--deck-surface)",
         color: logo.color ?? "#0A0E1A",
@@ -48,6 +63,17 @@ export function LogoChip({ logo, baseSize = 28 }: LogoChipProps) {
       }}
     >
       {logo.name}
+      {logo.marker && (
+        <span
+          style={{
+            marginLeft: 4,
+            fontSize: fontSize * 0.7,
+            color: "var(--deck-accent)",
+          }}
+        >
+          {logo.marker}
+        </span>
+      )}
     </motion.div>
   );
 }
