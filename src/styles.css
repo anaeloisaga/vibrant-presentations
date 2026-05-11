@@ -95,6 +95,27 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+
+  /* Deck theme tokens */
+  --deck-bg: #0A0E1A;
+  --deck-surface: #FBF6E9;
+  --deck-surface-2: #E7E8D1;
+  --deck-accent: #FF7A1A;
+  --deck-accent-2: #5B8DEF;
+  --deck-text: #FBF6E9;
+  --deck-text-dark: #0A0E1A;
+  --deck-muted: rgba(251, 246, 233, 0.6);
+}
+
+@layer base {
+  .deck-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+  .deck-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
 }
 
 .dark {
