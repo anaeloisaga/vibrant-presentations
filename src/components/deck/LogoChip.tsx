@@ -13,6 +13,27 @@ interface LogoChipProps {
  */
 export function LogoChip({ logo, baseSize = 28 }: LogoChipProps) {
   const fontSize = baseSize * logo.weight;
+  if (logo.image) {
+    const height = fontSize * 1.6;
+    return (
+      <motion.div
+        layoutId={`logo-${logo.name}`}
+        transition={{ type: "spring", damping: 22, stiffness: 140 }}
+        className="inline-flex items-center justify-center rounded-2xl px-5 py-3 shadow-lg"
+        style={{
+          backgroundColor: "var(--deck-surface)",
+          height,
+        }}
+      >
+        <img
+          src={logo.image}
+          alt={logo.name}
+          style={{ height: height * 0.6, width: "auto", objectFit: "contain", display: "block" }}
+          draggable={false}
+        />
+      </motion.div>
+    );
+  }
   return (
     <motion.div
       layoutId={`logo-${logo.name}`}
