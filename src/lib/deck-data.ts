@@ -20,6 +20,11 @@ import komma5Logo from "@/assets/logos/1komma5.png";
 import sonnenLogo from "@/assets/logos/sonnen.png";
 import octopusLogo from "@/assets/logos/octopus.png";
 import amberLogo from "@/assets/logos/amber.png";
+import gridxLogo from "@/assets/logos/gridx.png";
+import beebopLogo from "@/assets/logos/beebop.png";
+import enspiredLogo from "@/assets/logos/enspired.png";
+import sympowerLogo from "@/assets/logos/sympower.png";
+import habitatLogo from "@/assets/logos/habitat.png";
 
 export interface Logo {
   name: string;
@@ -79,6 +84,11 @@ export const LOGOS: Logo[] = [
   { name: "axle", cluster: "optimizer", weight: 1.15, color: "#E64545", image: axleLogo },
   { name: "uplight", cluster: "optimizer", weight: 1.1, color: "#1BB37A", image: uplightLogo },
   { name: "tilt", cluster: "optimizer", weight: 1.0, color: "#2E7AE8", image: tiltLogo },
+  { name: "gridX", cluster: "optimizer", weight: 1.0, color: "#1FB8A6", image: gridxLogo, marker: "*" },
+  { name: "Beebop", cluster: "optimizer", weight: 0.95, color: "#0A0E1A", image: beebopLogo, marker: "*" },
+  { name: "Enspired", cluster: "optimizer", weight: 1.0, color: "#E91E97", image: enspiredLogo, marker: "*" },
+  { name: "Sympower", cluster: "optimizer", weight: 1.05, color: "#1F8FB0", image: sympowerLogo, marker: "*" },
+  { name: "Habitat", cluster: "optimizer", weight: 0.95, color: "#0A0E1A", image: habitatLogo, marker: "*" },
 
   // Full-Stack — HW-Led
   { name: "BASE", cluster: "full-stack", subCluster: "hw-led", weight: 1.05, color: "#0A0E1A", image: baseLogo },
