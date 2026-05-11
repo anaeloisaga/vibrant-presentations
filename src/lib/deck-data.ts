@@ -14,6 +14,10 @@ import uplightLogo from "@/assets/logos/uplight.png";
 import tiltLogo from "@/assets/logos/tilt.png";
 import baseLogo from "@/assets/logos/base.png";
 import lunarEnergyLogo from "@/assets/logos/lunar-energy.png";
+import komma5Logo from "@/assets/logos/1komma5.png";
+import sonnenLogo from "@/assets/logos/sonnen.png";
+import octopusLogo from "@/assets/logos/octopus.png";
+import amberLogo from "@/assets/logos/amber.png";
 
 export interface Logo {
   name: string;
@@ -54,46 +58,24 @@ export const CLUSTERS: Record<
 
 export const LOGOS: Logo[] = [
   // Aggregators
-  { name: "gridX", cluster: "aggregators", weight: 1.4, color: "#1FB8A6" },
-  { name: "Beebop", cluster: "aggregators", weight: 1.0, color: "#0A0E1A" },
   { name: "Sunrun", cluster: "aggregators", weight: 1.2, color: "#F4B400", image: sunrunLogo },
-  { name: "Origin", cluster: "aggregators", weight: 0.95, color: "#E64A19" },
-  { name: "OVO", cluster: "aggregators", weight: 1.05, color: "#3FA535" },
-  { name: "EWE", cluster: "aggregators", weight: 0.85, color: "#C8C8C8" },
-  { name: "EnBW", cluster: "aggregators", weight: 1.0, color: "#FF7A1A" },
   { name: "E.ON", cluster: "aggregators", weight: 1.1, color: "#E2231A", image: eonLogo },
-  { name: "ekWateur", cluster: "aggregators", weight: 0.9, color: "#7DB249" },
-  { name: "OHM", cluster: "aggregators", weight: 0.95, color: "#A4C449" },
 
   // Integrated optimizers
   { name: "axle", cluster: "integrated-optimizers", weight: 1.15, color: "#E64545", image: axleLogo },
   { name: "tilt", cluster: "integrated-optimizers", weight: 1.0, color: "#2E7AE8", image: tiltLogo },
   { name: "uplight", cluster: "integrated-optimizers", weight: 1.1, color: "#1BB37A", image: uplightLogo },
-  { name: "Enpal", cluster: "integrated-optimizers", weight: 1.5, color: "#0A0E1A" },
-  { name: "1KOMMA5°", cluster: "integrated-optimizers", weight: 1.25, color: "#7B2D8E" },
-  { name: "sonnen", cluster: "integrated-optimizers", weight: 1.0, color: "#0A0E1A" },
-  { name: "Octopus", cluster: "integrated-optimizers", weight: 1.3, color: "#D946EF" },
-  { name: "good energy", cluster: "integrated-optimizers", weight: 0.85, color: "#F2D000" },
-  { name: "nrg", cluster: "integrated-optimizers", weight: 0.9, color: "#9CA3AF" },
-
-  // Asset Traders
-  { name: "enspired", cluster: "asset-traders", weight: 1.15, color: "#E91E63" },
-  { name: "Habitat", cluster: "asset-traders", weight: 1.05, color: "#1F6B3A" },
-  { name: "Sympower", cluster: "asset-traders", weight: 1.1, color: "#1FB8A6" },
-  { name: "Kraken", cluster: "asset-traders", weight: 1.2, color: "#D946EF" },
-  { name: "Nomos", cluster: "asset-traders", weight: 0.95, color: "#0A0E1A" },
+  { name: "1KOMMA5°", cluster: "integrated-optimizers", weight: 1.25, color: "#7B2D8E", image: komma5Logo },
+  { name: "sonnen", cluster: "integrated-optimizers", weight: 1.0, color: "#0A0E1A", image: sonnenLogo },
+  { name: "Octopus", cluster: "integrated-optimizers", weight: 1.3, color: "#D946EF", image: octopusLogo },
 
   // Fully integrated
-  { name: "amber", cluster: "fully-integrated", weight: 1.15, color: "#0A0E1A" },
+  { name: "amber", cluster: "fully-integrated", weight: 1.15, color: "#0A0E1A", image: amberLogo },
   { name: "BASE", cluster: "fully-integrated", weight: 1.05, color: "#0A0E1A", image: baseLogo },
   { name: "Lunar Energy", cluster: "fully-integrated", weight: 1.2, color: "#2E7AE8", image: lunarEnergyLogo },
   { name: "Tesla", cluster: "fully-integrated", weight: 1.4, color: "#E2231A", image: teslaLogo },
-  { name: "tado°", cluster: "fully-integrated", weight: 1.1, color: "#0A0E1A" },
-  { name: "rabot.energy", cluster: "fully-integrated", weight: 0.95, color: "#1FB8A6" },
   { name: "ostrom", cluster: "fully-integrated", weight: 1.0, color: "#0A0E1A", image: ostromLogo },
   { name: "Fuse", cluster: "fully-integrated", weight: 0.9, color: "#FF7A1A", image: fuseLogo },
-  { name: "tibber", cluster: "fully-integrated", weight: 1.05, color: "#5B8DEF" },
-  { name: "Spot My Energy", cluster: "fully-integrated", weight: 0.9, color: "#7B2D8E" },
 ];
 
 export interface Takeaway {
