@@ -1,8 +1,10 @@
 export type Cluster =
-  | "aggregators"
-  | "integrated-optimizers"
-  | "asset-traders"
-  | "fully-integrated";
+  | "hw-sellers"
+  | "retailer"
+  | "optimizer"
+  | "full-stack";
+
+export type SubCluster = "hw-led" | "tariff-led";
 
 import axleLogo from "@/assets/logos/axle.png";
 import sunrunLogo from "@/assets/logos/sunrun.png";
@@ -22,61 +24,74 @@ import amberLogo from "@/assets/logos/amber.png";
 export interface Logo {
   name: string;
   cluster: Cluster;
+  /** Used only for full-stack — splits the box into two rows */
+  subCluster?: SubCluster;
   /** relative size weight 0.7 - 1.6 */
   weight: number;
   /** brand-ish color for the chip */
   color?: string;
   /** optional imported image URL — when set, renders the real logo instead of the text chip */
   image?: string;
+  /** small superscript marker shown next to the chip (e.g. "*", "**") */
+  marker?: string;
 }
 
 export const CLUSTERS: Record<
   Cluster,
-  { label: string; tag: string; accent: string }
+  { label: string; description: string; accent: string; footnote?: string }
 > = {
-  aggregators: {
-    label: "Aggregators",
-    tag: "B2B2C",
-    accent: "#0A0E1A",
-  },
-  "integrated-optimizers": {
-    label: "Integrated optimizers",
-    tag: "B2B2C",
-    accent: "#8A8E99",
-  },
-  "asset-traders": {
-    label: "Asset Traders",
-    tag: "B2B",
+  "hw-sellers": {
+    label: "HW Sellers",
+    description: "Sell devices.",
     accent: "#5B8DEF",
   },
-  "fully-integrated": {
-    label: "Fully integrated energy companies",
-    tag: "B2C",
+  retailer: {
+    label: "Retailer",
+    description: "Sell tariff, own billing.",
+    accent: "#1FB8A6",
+  },
+  optimizer: {
+    label: "Optimizer",
+    description: "Aggregate devices and trade their flexibility.",
+    accent: "#D946EF",
+    footnote:
+      "* gridX and Beebop focus on aggregation only; Enspired, Sympower and Habitat focus on optimization / trading only.",
+  },
+  "full-stack": {
+    label: "Full-Stack",
+    description: "Acquire customers via HW / tariff, aggregate assets, trade flex.",
     accent: "#FF7A1A",
+    footnote: "** Only local optimization against dynamic tariff.",
   },
 };
 
 export const LOGOS: Logo[] = [
-  // Aggregators
-  { name: "Sunrun", cluster: "aggregators", weight: 1.2, color: "#F4B400", image: sunrunLogo },
-  { name: "E.ON", cluster: "aggregators", weight: 1.1, color: "#E2231A", image: eonLogo },
+  // HW Sellers
+  { name: "Sunrun", cluster: "hw-sellers", weight: 1.2, color: "#F4B400", image: sunrunLogo },
+  { name: "Tesla", cluster: "hw-sellers", weight: 1.4, color: "#E2231A", image: teslaLogo },
 
-  // Integrated optimizers
-  { name: "axle", cluster: "integrated-optimizers", weight: 1.15, color: "#E64545", image: axleLogo },
-  { name: "tilt", cluster: "integrated-optimizers", weight: 1.0, color: "#2E7AE8", image: tiltLogo },
-  { name: "uplight", cluster: "integrated-optimizers", weight: 1.1, color: "#1BB37A", image: uplightLogo },
-  { name: "1KOMMA5°", cluster: "integrated-optimizers", weight: 1.25, color: "#7B2D8E", image: komma5Logo },
-  { name: "sonnen", cluster: "integrated-optimizers", weight: 1.0, color: "#0A0E1A", image: sonnenLogo },
-  { name: "Octopus", cluster: "integrated-optimizers", weight: 1.3, color: "#D946EF", image: octopusLogo },
+  // Retailer
+  { name: "E.ON", cluster: "retailer", weight: 1.1, color: "#E2231A", image: eonLogo },
+  { name: "ostrom", cluster: "retailer", weight: 1.0, color: "#0A0E1A", image: ostromLogo },
+  { name: "Fuse", cluster: "retailer", weight: 0.9, color: "#FF7A1A", image: fuseLogo },
 
-  // Fully integrated
-  { name: "amber", cluster: "fully-integrated", weight: 1.15, color: "#0A0E1A", image: amberLogo },
-  { name: "BASE", cluster: "fully-integrated", weight: 1.05, color: "#0A0E1A", image: baseLogo },
-  { name: "Lunar Energy", cluster: "fully-integrated", weight: 1.2, color: "#2E7AE8", image: lunarEnergyLogo },
-  { name: "Tesla", cluster: "fully-integrated", weight: 1.4, color: "#E2231A", image: teslaLogo },
-  { name: "ostrom", cluster: "fully-integrated", weight: 1.0, color: "#0A0E1A", image: ostromLogo },
-  { name: "Fuse", cluster: "fully-integrated", weight: 0.9, color: "#FF7A1A", image: fuseLogo },
+  // Optimizer
+  { name: "axle", cluster: "optimizer", weight: 1.15, color: "#E64545", image: axleLogo },
+  { name: "uplight", cluster: "optimizer", weight: 1.1, color: "#1BB37A", image: uplightLogo },
+  { name: "tilt", cluster: "optimizer", weight: 1.0, color: "#2E7AE8", image: tiltLogo },
+
+  // Full-Stack — HW-Led
+  { name: "BASE", cluster: "full-stack", subCluster: "hw-led", weight: 1.05, color: "#0A0E1A", image: baseLogo },
+  { name: "Lunar Energy", cluster: "full-stack", subCluster: "hw-led", weight: 1.2, color: "#2E7AE8", image: lunarEnergyLogo },
+  { name: "1KOMMA5°", cluster: "full-stack", subCluster: "hw-led", weight: 1.25, color: "#7B2D8E", image: komma5Logo, marker: "**" },
+
+  // Full-Stack — Tariff-Led
+  { name: "Octopus", cluster: "full-stack", subCluster: "tariff-led", weight: 1.3, color: "#D946EF", image: octopusLogo },
+  { name: "amber", cluster: "full-stack", subCluster: "tariff-led", weight: 1.15, color: "#0A0E1A", image: amberLogo },
 ];
+
+// Drop unused sonnen import warning by referencing it conditionally
+void sonnenLogo;
 
 export interface Takeaway {
   id: string;
