@@ -111,7 +111,7 @@ export function IntroLogoCloud() {
             className="deck-body mt-7"
             style={{ color: "var(--deck-muted)", fontSize: 26 }}
           >
-            We looked at 35 companies. Here's what we learned.
+            We looked at 17 companies. Here's what we learned.
           </motion.p>
         </motion.div>
       </div>
