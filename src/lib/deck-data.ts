@@ -47,8 +47,8 @@ export const CLUSTERS: Record<
   { label: string; description: string; accent: string; footnote?: string }
 > = {
   "hw-sellers": {
-    label: "HW Sellers",
-    description: "Sell devices.",
+    label: "HW focused",
+    description: "Devices in the home.",
     accent: "#5B8DEF",
   },
   retailer: {
@@ -66,14 +66,14 @@ export const CLUSTERS: Record<
     label: "Full-Stack",
     description: "Acquire customers via HW / tariff, aggregate assets, trade flex.",
     accent: "#FF7A1A",
-    footnote: "** Only local optimization against dynamic tariff.",
+    footnote: "* Only local optimization against dynamic tariff.",
   },
 };
 
 export const LOGOS: Logo[] = [
   // HW Sellers
   { name: "Sunrun", cluster: "hw-sellers", weight: 1.2, color: "#F4B400", image: sunrunLogo },
-  { name: "Tesla", cluster: "hw-sellers", weight: 1.4, color: "#E2231A", image: teslaLogo },
+  { name: "Tesla", cluster: "hw-sellers", weight: 1.4, color: "#E2231A", image: teslaLogo, marker: "*" },
 
   // Retailer
   { name: "E.ON", cluster: "retailer", weight: 1.1, color: "#E2231A", image: eonLogo },
@@ -91,15 +91,14 @@ export const LOGOS: Logo[] = [
   // Full-Stack — HW-Led
   { name: "BASE", cluster: "full-stack", subCluster: "hw-led", weight: 1.05, color: "#0A0E1A", image: baseLogo },
   { name: "Lunar Energy", cluster: "full-stack", subCluster: "hw-led", weight: 1.2, color: "#2E7AE8", image: lunarEnergyLogo },
-  { name: "1KOMMA5°", cluster: "full-stack", subCluster: "hw-led", weight: 1.25, color: "#7B2D8E", image: komma5Logo, marker: "**" },
+  { name: "1KOMMA5°", cluster: "full-stack", subCluster: "hw-led", weight: 1.25, color: "#7B2D8E", image: komma5Logo, marker: "*" },
+  { name: "Sonnen", cluster: "full-stack", subCluster: "hw-led", weight: 1.15, color: "#E2231A", image: sonnenLogo },
 
   // Full-Stack — Tariff-Led
   { name: "Octopus", cluster: "full-stack", subCluster: "tariff-led", weight: 1.3, color: "#D946EF", image: octopusLogo },
   { name: "amber", cluster: "full-stack", subCluster: "tariff-led", weight: 1.15, color: "#0A0E1A", image: amberLogo },
 ];
 
-// Drop unused sonnen import warning by referencing it conditionally
-void sonnenLogo;
 void enspiredLogo;
 void sympowerLogo;
 void habitatLogo;
