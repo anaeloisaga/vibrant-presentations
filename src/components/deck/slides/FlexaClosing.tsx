@@ -1,23 +1,30 @@
 import { motion } from "framer-motion";
 import { KineticHeadline } from "../kinetic/KineticHeadline";
+import flexaBg from "@/assets/insights/flexa-bg.jpg";
 
 const POINTS = [
-  "We're already wiring partnerships into the core, not bolted on.",
-  "Our stack is vertical by design — hardware, software, and trading in one loop.",
-  "Flexibility isn't a feature. It's the product we're shipping.",
+  "Players are betting big on flexibility and optimization — the market is moving where we're already pointed.",
+  "We're participating in multi-market revenue stacking, layering value across flexibility and wholesale markets on the same asset.",
+  "We're leveraging partnerships to integrate deeper into the energy value chain and expand into new segments.",
 ];
 
 export function FlexaClosing() {
   return (
     <div className="relative w-full h-full px-32 py-24 flex flex-col justify-center">
-      {/* Background gradient orb */}
+      {/* Background photo */}
       <div
-        className="absolute -top-40 -right-40 rounded-full"
+        className="absolute inset-0"
         style={{
-          width: 800,
-          height: 800,
+          backgroundImage: `url(${flexaBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
           background:
-            "radial-gradient(circle, rgba(255,122,26,0.35) 0%, rgba(255,122,26,0) 70%)",
+            "linear-gradient(90deg, rgba(10,14,26,0.92) 0%, rgba(10,14,26,0.78) 55%, rgba(10,14,26,0.55) 100%)",
         }}
       />
 
@@ -30,12 +37,12 @@ export function FlexaClosing() {
         </div>
 
         <KineticHeadline
-          text="We're on the right path."
+          text="Flexa is on the right path"
           style={{
-            fontSize: 160,
+            fontSize: 140,
             lineHeight: 0.95,
             color: "var(--deck-text)",
-            marginBottom: 64,
+            marginBottom: 56,
           }}
         />
 
