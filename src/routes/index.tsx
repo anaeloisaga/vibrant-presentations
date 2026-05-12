@@ -45,9 +45,9 @@ export const Route = createFileRoute("/")({
 const TOTAL_SLIDES = 8;
 
 const ACCENT = {
-  one: "#FF7A1A",
-  two: "#D946EF",
-  three: "#5B8DEF",
+  one: "#2E7AE8",   // Lunar blue
+  two: "#E64545",   // Axle red
+  three: "#1BB37A", // Amber green
   four: "#1FB8A6",
 };
 
