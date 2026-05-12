@@ -10,10 +10,10 @@ import { FlexaClosing } from "@/components/deck/slides/FlexaClosing";
 import { TrendingUp, Cloud, Zap, Globe2, Network, Battery, ShieldCheck, DollarSign, Wrench } from "lucide-react";
 import axleLogo from "@/assets/logos/axle.png";
 import amberLogo from "@/assets/logos/amber.png";
-import basePowerLogo from "@/assets/logos/base-power.png";
+import basePowerLogo from "@/assets/logos/base.png";
 import axleHero from "@/assets/insights/axle-hero.png";
 import amberBg from "@/assets/insights/amber-bg.png";
-import baseFarmers from "@/assets/insights/base-farmers.png";
+import baseBg from "@/assets/insights/base-bg.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,23 +55,23 @@ const INSIGHTS: DeepDiveInsight[] = [
     company: "Base Power",
     companyLogo: basePowerLogo,
     tagline: "Vertically integrated B2C gentailer offering VPP optimization.",
-    heroStat: { value: "$1.3B", label: "raised through Series C (Oct 2025) — 10,000+ TX homeowners, 250 MW managed" },
-    media: { src: baseFarmers, mode: "bg" },
+    heroStat: { value: "10,000+", label: "Texas households on Base's battery-as-a-service plan, with 250 MW under VPP management" },
+    media: { src: baseBg, mode: "bg" },
     points: [
       {
         icon: Wrench,
-        title: "Full vertical integration = unbeatable unit economics",
-        body: "Hardware, install, software and ERCOT market participation all in one — Base controls the entire stack from battery manufacture to grid dispatch, removing third-party dependencies and locking in margin.",
+        title: "Vertical integration = optimization edge",
+        body: "Owning hardware, install and ERCOT market access end-to-end lets Base optimize dispatch directly — no third parties between the battery and the wholesale market.",
       },
       {
         icon: DollarSign,
-        title: "Battery-as-a-service unlocks scale",
-        body: "Base owns the battery; customers pay a low upfront install fee plus a monthly subscription. Mass-adoption pricing turns hardware into recurring revenue and accelerates fleet growth.",
+        title: "VPP revenue subsidizes the customer",
+        body: "Wholesale and ancillary services revenue from optimized dispatch funds a per-kWh rate cheaper than the market — the VPP pays down the bill.",
       },
       {
         icon: ShieldCheck,
-        title: "Backup as a wedge, VPP revenue as the subsidy",
-        body: "On the unstable Texas grid, guaranteed outage protection sells reliability — and the wholesale + ancillary services revenue Base captures via its VPP funds a per-kWh rate cheaper than the market.",
+        title: "Backup as the wedge into the home",
+        body: "Outage protection on Texas's unstable grid sells the install — once in the home, Base owns the asset and its full optimization upside.",
       },
     ],
   },
@@ -113,7 +113,7 @@ const INSIGHTS: DeepDiveInsight[] = [
     media: { src: amberBg, mode: "bg" },
     extraCallout: {
       title: "More partnership examples",
-      items: ["Uplight +", "Octopus + Uplight", "E.ON + gridX", "Lunar + Moixa"],
+      items: ["Octopus + Uplight", "E.ON + gridX", "Lunar + Moixa"],
     },
     points: [
       {
