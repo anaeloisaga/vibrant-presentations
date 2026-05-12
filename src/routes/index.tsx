@@ -154,7 +154,6 @@ const INSIGHTS: DeepDiveInsight[] = [
 
 function Deck() {
   const [index, setIndex] = useState(0);
-  const [visited, setVisited] = useState<Set<string>>(new Set());
 
   // Sync index <-> URL hash
   useEffect(() => {
