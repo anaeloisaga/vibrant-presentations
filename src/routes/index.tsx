@@ -12,7 +12,7 @@ import lunarLogo from "@/assets/logos/lunar-energy.png";
 import axleLogo from "@/assets/logos/axle.png";
 import amberLogo from "@/assets/logos/amber.png";
 import basePowerLogo from "@/assets/logos/base-power.png";
-import lunarApp from "@/assets/insights/lunar-app.png";
+import lunarSystem from "@/assets/insights/lunar-system.jpg";
 import axleHero from "@/assets/insights/axle-hero.png";
 import amberEon from "@/assets/insights/amber-eon.png";
 import baseFarmers from "@/assets/insights/base-farmers.png";
@@ -60,7 +60,7 @@ const INSIGHTS: DeepDiveInsight[] = [
     companyLogo: lunarLogo,
     tagline: "Integrated hardware + software, scaled through a single installer channel.",
     heroStat: { value: "130k+", label: "assets under Lunar Gridshare across US, UK & Japan" },
-    media: { src: lunarApp, mode: "card", caption: "Lunar app — one tap, full home" },
+    media: { src: lunarSystem, mode: "bg" },
     points: [
       {
         icon: Layers,
