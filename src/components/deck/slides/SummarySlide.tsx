@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import { KineticHeadline } from "../kinetic/KineticHeadline";
-import { Layers, TrendingUp, Globe2, Sparkles } from "lucide-react";
+import { Layers, TrendingUp, Globe2 } from "lucide-react";
 
 const ACCENT = {
-  one: "#FF7A1A",
-  two: "#D946EF",
-  three: "#5B8DEF",
-  four: "#1FB8A6",
+  one: "#1A2942",   // Base Power dark
+  two: "#E64545",   // Axle red
+  three: "#1BB37A", // Amber green
 };
 
 export function SummarySlide() {
@@ -35,14 +34,6 @@ export function SummarySlide() {
       highlight: "B2B",
       body: "Growth increasingly comes from leveraging partnerships to integrate deeper into the energy value chain and expand into new geographies — through B2B distribution, OEM tie-ups, and utility alliances.",
     },
-    {
-      n: "04",
-      accent: ACCENT.four,
-      icon: <Sparkles size={36} />,
-      title: "Tech-first is the norm",
-      highlight: "table stakes",
-      body: "Cloud-to-cloud OEM integrations, top-tier in-app UX, and AI woven through operations (from call centers to optimization) are now baseline expectations rather than differentiators.",
-    },
   ];
 
   return (
@@ -61,8 +52,8 @@ export function SummarySlide() {
         />
       </div>
 
-      {/* 2x2 grid of equal-sized insight cards */}
-      <div className="grid grid-cols-2 grid-rows-2 gap-7 flex-1">
+      {/* 3 equal-sized insight cards */}
+      <div className="grid grid-cols-3 gap-7 flex-1">
         {cards.map((c, i) => (
           <motion.div
             key={c.n}
@@ -92,13 +83,13 @@ export function SummarySlide() {
             </div>
             <h3
               className="deck-display"
-              style={{ fontSize: 36, lineHeight: 1.15, marginBottom: 18 }}
+              style={{ fontSize: 32, lineHeight: 1.15, marginBottom: 18 }}
             >
               {c.title}
             </h3>
             <p
               className="deck-body"
-              style={{ fontSize: 22, color: "#3A3F4D", lineHeight: 1.45 }}
+              style={{ fontSize: 20, color: "#3A3F4D", lineHeight: 1.45 }}
             >
               {c.body}
             </p>
