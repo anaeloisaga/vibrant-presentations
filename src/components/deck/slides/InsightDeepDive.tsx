@@ -17,6 +17,14 @@ export interface DeepDiveInsight {
   tagline: string;
   heroStat?: { value: string; label: string };
   points: DeepDivePoint[];
+  /** Optional supporting visual */
+  media?: {
+    src: string;
+    /** "bg" = faded full-bleed backdrop on right side; "card" = framed polaroid bottom-left */
+    mode: "bg" | "card";
+    /** caption shown under card */
+    caption?: string;
+  };
 }
 
 interface Props {
@@ -38,6 +46,23 @@ export function InsightDeepDive({ insight: i }: Props) {
           background: `radial-gradient(circle, ${i.accent}33 0%, ${i.accent}00 70%)`,
         }}
       />
+
+      {/* Optional full-bleed faded backdrop (right side) */}
+      {i.media?.mode === "bg" && (
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `url(${i.media.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "right center",
+            opacity: 0.18,
+            maskImage:
+              "linear-gradient(to right, transparent 0%, transparent 35%, black 75%, black 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, transparent 35%, black 75%, black 100%)",
+          }}
+        />
+      )}
 
       {/* Left column */}
       <div className="relative flex-1 px-24 py-20 flex flex-col justify-center">
@@ -166,6 +191,53 @@ export function InsightDeepDive({ insight: i }: Props) {
           );
         })}
       </div>
+
+      {/* Optional polaroid card bottom-left */}
+      {i.media?.mode === "card" && (
+        <motion.div
+          initial={{ opacity: 0, y: 30, rotate: -6 }}
+          animate={{ opacity: 1, y: 0, rotate: -3 }}
+          transition={{ delay: 0.9, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute"
+          style={{
+            bottom: 56,
+            left: 60,
+            width: 240,
+            padding: 14,
+            paddingBottom: i.media.caption ? 36 : 14,
+            backgroundColor: "#FBF6E9",
+            boxShadow: "0 30px 60px rgba(0,0,0,0.45)",
+            borderRadius: 6,
+          }}
+        >
+          <img
+            src={i.media.src}
+            alt={i.media.caption ?? ""}
+            style={{
+              width: "100%",
+              height: 170,
+              objectFit: "cover",
+              display: "block",
+              borderRadius: 2,
+            }}
+          />
+          {i.media.caption && (
+            <div
+              className="deck-body"
+              style={{
+                marginTop: 10,
+                fontSize: 13,
+                color: "#3A3F4D",
+                textAlign: "center",
+                fontStyle: "italic",
+                letterSpacing: "0.02em",
+              }}
+            >
+              {i.media.caption}
+            </div>
+          )}
+        </motion.div>
+      )}
     </div>
   );
 }
