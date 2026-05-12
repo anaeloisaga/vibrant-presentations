@@ -58,7 +58,7 @@ const INSIGHTS: DeepDiveInsight[] = [
     accent: ACCENT.one,
     company: "Lunar Energy",
     companyLogo: lunarLogo,
-    tagline: "Integrated hardware + software, scaled through a single installer channel.",
+    tagline: "Integrated hardware + software, scaled through an installer channel.",
     heroStat: { value: "130k+", label: "assets under Lunar Gridshare across US, UK & Japan" },
     media: { src: lunarSystem, mode: "bg" },
     points: [
@@ -81,7 +81,7 @@ const INSIGHTS: DeepDiveInsight[] = [
   },
   {
     number: "02",
-    insight: "Value lives in multi-market optimization",
+    insight: "Multi-market revenue stacking",
     accent: ACCENT.two,
     company: "Axle",
     companyLogo: axleLogo,
@@ -90,18 +90,18 @@ const INSIGHTS: DeepDiveInsight[] = [
     points: [
       {
         icon: TrendingUp,
-        title: "Revenue stacking",
-        body: "Same asset, layered earnings across UK flex and wholesale markets — auto-registered as new ones open.",
+        title: "Multi-market revenue stacking",
+        body: "Axle participates across UK flexibility and wholesale markets simultaneously, layering revenues on the same asset — with assets auto-registered as new markets open.",
       },
       {
         icon: Cloud,
-        title: "Cloud-to-cloud, no hardware",
-        body: "Direct OEM API integrations — no gateway in the home, dispatch handled server-side.",
+        title: "Cloud-to-cloud connectivity",
+        body: "Connects directly to OEM cloud APIs — no gateway, no extra hardware in the home. Dispatch runs entirely server-side, making onboarding frictionless and globally scalable.",
       },
       {
         icon: Zap,
-        title: "First-mover in wholesale",
-        body: "First Virtual Trading Party in GB, holds licenses across multiple EU countries — partners go live instantly.",
+        title: "First-mover advantage & speed-to-market",
+        body: "Axle already holds trading licenses and market registrations across multiple European countries, so partners go live without waiting for regulatory approval. It was the first company to qualify as a Virtual Trading Party in Great Britain — helping draft the code changes that unlocked wholesale participation for behind-the-meter assets.",
       },
     ],
   },
