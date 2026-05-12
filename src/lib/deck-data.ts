@@ -59,8 +59,7 @@ export const CLUSTERS: Record<
     label: "Optimizer",
     description: "Aggregate devices and trade their flexibility.",
     accent: "#D946EF",
-    footnote:
-      "* gridX and Beebop focus on aggregation only; Enspired, Sympower and Habitat focus on optimization / trading only.",
+    footnote: "* gridX and Beebop focus on aggregation only.",
   },
   "full-stack": {
     label: "Full-Stack",
@@ -86,9 +85,6 @@ export const LOGOS: Logo[] = [
   { name: "tilt", cluster: "optimizer", weight: 1.0, color: "#2E7AE8", image: tiltLogo },
   { name: "gridX", cluster: "optimizer", weight: 1.0, color: "#1FB8A6", image: gridxLogo, marker: "*" },
   { name: "Beebop", cluster: "optimizer", weight: 0.95, color: "#0A0E1A", image: beebopLogo, marker: "*" },
-  { name: "Enspired", cluster: "optimizer", weight: 1.0, color: "#E91E97", image: enspiredLogo, marker: "*" },
-  { name: "Sympower", cluster: "optimizer", weight: 1.05, color: "#1F8FB0", image: sympowerLogo, marker: "*" },
-  { name: "Habitat", cluster: "optimizer", weight: 0.95, color: "#0A0E1A", image: habitatLogo, marker: "*" },
 
   // Full-Stack — HW-Led
   { name: "BASE", cluster: "full-stack", subCluster: "hw-led", weight: 1.05, color: "#0A0E1A", image: baseLogo },
@@ -102,6 +98,9 @@ export const LOGOS: Logo[] = [
 
 // Drop unused sonnen import warning by referencing it conditionally
 void sonnenLogo;
+void enspiredLogo;
+void sympowerLogo;
+void habitatLogo;
 
 export interface Takeaway {
   id: string;
