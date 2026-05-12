@@ -17,6 +17,8 @@ export interface DeepDiveInsight {
   tagline: string;
   heroStat?: { value: string; label: string };
   points: DeepDivePoint[];
+  /** Optional bottom-left callout box, e.g. "More partnership examples" */
+  extraCallout?: { title: string; items: string[] };
   /** Optional supporting visual */
   media?: {
     src: string;
@@ -138,6 +140,43 @@ export function InsightDeepDive({ insight: i }: Props) {
             >
               {i.heroStat.label}
             </span>
+          </motion.div>
+        )}
+
+        {i.extraCallout && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.1, duration: 0.5 }}
+            className="mt-10 rounded-2xl p-6"
+            style={{
+              border: `2px dashed ${i.accent}`,
+              backgroundColor: `${i.accent}14`,
+              maxWidth: 720,
+            }}
+          >
+            <div
+              className="deck-body uppercase tracking-[0.3em] mb-3"
+              style={{ color: i.accent, fontSize: 14, fontWeight: 700 }}
+            >
+              {i.extraCallout.title}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {i.extraCallout.items.map((item) => (
+                <span
+                  key={item}
+                  className="deck-body px-4 py-2 rounded-full"
+                  style={{
+                    backgroundColor: "var(--deck-surface)",
+                    color: "var(--deck-text-dark)",
+                    fontSize: 18,
+                    fontWeight: 600,
+                  }}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </motion.div>
         )}
       </div>
