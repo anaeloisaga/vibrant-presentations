@@ -59,8 +59,7 @@ export const CLUSTERS: Record<
     label: "Optimizer",
     description: "Aggregate devices and trade their flexibility.",
     accent: "#D946EF",
-    footnote:
-      "* gridX and Beebop focus on aggregation only; Enspired, Sympower and Habitat focus on optimization / trading only.",
+    footnote: "* gridX and Beebop focus on aggregation only.",
   },
   "full-stack": {
     label: "Full-Stack",
