@@ -99,6 +99,9 @@ export const LOGOS: Logo[] = [
 
 // Drop unused sonnen import warning by referencing it conditionally
 void sonnenLogo;
+void enspiredLogo;
+void sympowerLogo;
+void habitatLogo;
 
 export interface Takeaway {
   id: string;
