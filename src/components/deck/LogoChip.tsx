@@ -5,14 +5,16 @@ interface LogoChipProps {
   logo: Logo;
   /** Base font size in px (before weight multiplier) */
   baseSize?: number;
+  /** When true, ignore per-logo weight so every chip renders the same size */
+  uniform?: boolean;
 }
 
 /**
  * Brand-styled text "logo" chip — pill with the company name in its brand color.
  * Uses motion.div with layoutId so it can be smoothly tweened between slides.
  */
-export function LogoChip({ logo, baseSize = 28 }: LogoChipProps) {
-  const fontSize = baseSize * logo.weight;
+export function LogoChip({ logo, baseSize = 28, uniform = false }: LogoChipProps) {
+  const fontSize = baseSize * (uniform ? 1 : logo.weight);
   if (logo.image) {
     const height = fontSize * 1.6;
     return (

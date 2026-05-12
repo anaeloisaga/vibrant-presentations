@@ -40,11 +40,11 @@ export function ClustersSlide() {
           className="deck-body uppercase tracking-[0.4em] mb-3"
           style={{ color: "var(--deck-accent)", fontSize: 18, fontWeight: 600 }}
         >
-          Step 1 — Cluster
+          1 — Cluster
         </div>
         <KineticHeadline
-          text="The 4 archetypes we discovered"
-          style={{ fontSize: 72, lineHeight: 1, color: "var(--deck-text)" }}
+          text="4 archetypes, clustered by core activities in the residential space"
+          style={{ fontSize: 56, lineHeight: 1.05, color: "var(--deck-text)" }}
         />
       </div>
 
@@ -150,7 +150,7 @@ export function ClustersSlide() {
                         </div>
                         <div className="flex-1 flex flex-wrap items-center justify-center content-center gap-4">
                           {col.logos.map((logo) => (
-                            <LogoChip key={logo.name} logo={logo} baseSize={44} />
+                            <LogoChip key={logo.name} logo={logo} baseSize={56} uniform />
                           ))}
                         </div>
                       </div>
@@ -169,7 +169,7 @@ export function ClustersSlide() {
                 }}
               >
                 {LOGOS.filter((l) => l.cluster === cKey).map((logo) => (
-                  <LogoChip key={logo.name} logo={logo} baseSize={48} />
+                  <LogoChip key={logo.name} logo={logo} baseSize={56} uniform />
                 ))}
               </div>
             )}
