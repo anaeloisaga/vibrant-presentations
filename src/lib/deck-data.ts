@@ -25,6 +25,7 @@ import beebopLogo from "@/assets/logos/beebop.png";
 import enspiredLogo from "@/assets/logos/enspired.png";
 import sympowerLogo from "@/assets/logos/sympower.png";
 import habitatLogo from "@/assets/logos/habitat.png";
+import tibberLogo from "@/assets/logos/tibber.png";
 
 export interface Logo {
   name: string;
@@ -78,6 +79,7 @@ export const LOGOS: Logo[] = [
   { name: "E.ON", cluster: "retailer", weight: 1.1, color: "#E2231A", image: eonLogo },
   { name: "ostrom", cluster: "retailer", weight: 1.0, color: "#0A0E1A", image: ostromLogo },
   { name: "Fuse", cluster: "retailer", weight: 0.9, color: "#FF7A1A", image: fuseLogo },
+  { name: "Tibber", cluster: "retailer", weight: 1.1, color: "#28C8C8", image: tibberLogo },
 
   // Optimizer
   { name: "axle", cluster: "optimizer", weight: 1.15, color: "#E64545", image: axleLogo },
