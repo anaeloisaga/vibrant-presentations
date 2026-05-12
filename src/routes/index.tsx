@@ -4,11 +4,14 @@ import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import { SlideStage } from "@/components/deck/SlideStage";
 import { IntroLogoCloud } from "@/components/deck/slides/IntroLogoCloud";
 import { ClustersSlide } from "@/components/deck/slides/ClustersSlide";
-import { TakeawaysHub } from "@/components/deck/slides/TakeawaysHub";
 import { SummarySlide } from "@/components/deck/slides/SummarySlide";
-import { TakeawayDetail } from "@/components/deck/slides/TakeawayDetail";
+import { InsightDeepDive, type DeepDiveInsight } from "@/components/deck/slides/InsightDeepDive";
 import { FlexaClosing } from "@/components/deck/slides/FlexaClosing";
-import { TAKEAWAYS } from "@/lib/deck-data";
+import { Layers, Handshake, Cpu, TrendingUp, Cloud, Zap, Globe2, Network, Battery, ShieldCheck, DollarSign, Wrench } from "lucide-react";
+import lunarLogo from "@/assets/logos/lunar-energy.png";
+import axleLogo from "@/assets/logos/axle.png";
+import amberLogo from "@/assets/logos/amber.png";
+import basePowerLogo from "@/assets/logos/base-power.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,17 +31,126 @@ export const Route = createFileRoute("/")({
  * Slide order:
  *  0  intro logo cloud
  *  1  clustering moment
- *  2  takeaways hub
- *  3  takeaway detail 1
- *  4  takeaways hub
- *  5  takeaway detail 2
- *  6  takeaways hub
- *  7  takeaway detail 3
- *  8  takeaways hub
- *  9  takeaway detail 4
- *  10 Flexa closing
+ *  2  summary of 4 insights
+ *  3  deep dive 1 — Lunar
+ *  4  deep dive 2 — Axle
+ *  5  deep dive 3 — Amber
+ *  6  deep dive 4 — Base Power
+ *  7  Flexa closing
  */
-const TOTAL_SLIDES = 11;
+const TOTAL_SLIDES = 8;
+
+const ACCENT = {
+  one: "#FF7A1A",
+  two: "#D946EF",
+  three: "#5B8DEF",
+  four: "#1FB8A6",
+};
+
+const INSIGHTS: DeepDiveInsight[] = [
+  {
+    number: "01",
+    insight: "Most players move into optimization",
+    accent: ACCENT.one,
+    company: "Lunar Energy",
+    companyLogo: lunarLogo,
+    tagline: "Hardware + software shipped as one product, scaled through partners.",
+    heroStat: { value: "130k+", label: "assets under Lunar Gridshare across US, UK & Japan" },
+    points: [
+      {
+        icon: Layers,
+        title: "One integrated product",
+        body: "Own batteries, inverters and the Gridshare VPP — sold as a single stack, not parts.",
+      },
+      {
+        icon: Handshake,
+        title: "Sunrun as primary channel",
+        body: "Investor + #1 US residential solar installer = direct access to 700k+ existing homes.",
+      },
+      {
+        icon: Cpu,
+        title: "Software-led scale",
+        body: "Acquired Moixa to control 3rd-party batteries, EVs and thermostats via cloud APIs.",
+      },
+    ],
+  },
+  {
+    number: "02",
+    insight: "Value lives in multi-market optimization",
+    accent: ACCENT.two,
+    company: "Axle",
+    companyLogo: axleLogo,
+    tagline: "Stacking flexibility revenue across markets — without owning the customer.",
+    points: [
+      {
+        icon: TrendingUp,
+        title: "Revenue stacking",
+        body: "Same asset, layered earnings across UK flex and wholesale markets — auto-registered as new ones open.",
+      },
+      {
+        icon: Cloud,
+        title: "Cloud-to-cloud, no hardware",
+        body: "Direct OEM API integrations — no gateway in the home, dispatch handled server-side.",
+      },
+      {
+        icon: Zap,
+        title: "First-mover in wholesale",
+        body: "First Virtual Trading Party in GB, holds licenses across multiple EU countries — partners go live instantly.",
+      },
+    ],
+  },
+  {
+    number: "03",
+    insight: "Growth = B2B, international, partnerships",
+    accent: ACCENT.three,
+    company: "Amber",
+    companyLogo: amberLogo,
+    tagline: "Australian dynamic-tariff player exporting its tech via OEM and utility deals.",
+    heroStat: { value: "~70%", label: "of 3rd-party hardware market integrated with Amber's Smart Shift" },
+    points: [
+      {
+        icon: Globe2,
+        title: "Europe via partnerships",
+        body: "Licensing battery optimization software to E.ON (UK trial + investor) and Ecotricity.",
+      },
+      {
+        icon: Network,
+        title: "OEM-wide compatibility",
+        body: "Smart Shift, co-developed with CSIRO, plugs into ~70% of third-party hardware in market.",
+      },
+      {
+        icon: Battery,
+        title: "Asset expansion via M&A",
+        body: "Acquired ChargeHQ to add EV charging + V2G readiness on top of home batteries.",
+      },
+    ],
+  },
+  {
+    number: "04",
+    insight: "Tech-first is now table stakes",
+    accent: ACCENT.four,
+    company: "Base Power",
+    companyLogo: basePowerLogo,
+    tagline: "Vertical integration + battery-as-a-service, subsidized by grid revenue.",
+    points: [
+      {
+        icon: Wrench,
+        title: "End-to-end vertical stack",
+        body: "Hardware, install, software and market participation in one — unbeatable unit economics.",
+      },
+      {
+        icon: DollarSign,
+        title: "Battery-as-a-service",
+        body: "Base owns the battery; customer pays an install fee + monthly subscription. Mass-adoption pricing.",
+      },
+      {
+        icon: ShieldCheck,
+        title: "Backup as a wedge",
+        body: "On the unstable Texas grid, guaranteed outage protection sells reliability — VPP revenue funds the discount.",
+      },
+    ],
+  },
+];
 
 function Deck() {
   const [index, setIndex] = useState(0);
@@ -92,24 +204,6 @@ function Deck() {
     return () => window.removeEventListener("keydown", onKey);
   }, [next, prev]);
 
-  const goToTakeaway = useCallback((id: string) => {
-    const tIdx = TAKEAWAYS.findIndex((t) => t.id === id);
-    if (tIdx < 0) return;
-    setVisited((s) => new Set(s).add(id));
-    // Detail slides are at 3, 5, 7, 9
-    setIndex(3 + tIdx * 2);
-  }, []);
-
-  const backToHub = useCallback(() => {
-    // From a detail slide, jump forward to the next hub (or closing)
-    setIndex((i) => {
-      // Detail slides: 3,5,7,9 -> next hub: 4,6,8 then closing: 10
-      if (i === 9) return 10;
-      if (i === 3 || i === 5 || i === 7) return i + 1;
-      return i;
-    });
-  }, []);
-
   const slide = useMemo(() => {
     switch (index) {
       case 0:
@@ -118,24 +212,20 @@ function Deck() {
         return <ClustersSlide />;
       case 2:
         return <SummarySlide />;
-      case 4:
-      case 6:
-      case 8:
-        return <TakeawaysHub onSelect={goToTakeaway} visited={visited} />;
       case 3:
-        return <TakeawayDetail takeaway={TAKEAWAYS[0]} onBack={backToHub} />;
+        return <InsightDeepDive insight={INSIGHTS[0]} />;
+      case 4:
+        return <InsightDeepDive insight={INSIGHTS[1]} />;
       case 5:
-        return <TakeawayDetail takeaway={TAKEAWAYS[1]} onBack={backToHub} />;
+        return <InsightDeepDive insight={INSIGHTS[2]} />;
+      case 6:
+        return <InsightDeepDive insight={INSIGHTS[3]} />;
       case 7:
-        return <TakeawayDetail takeaway={TAKEAWAYS[2]} onBack={backToHub} />;
-      case 9:
-        return <TakeawayDetail takeaway={TAKEAWAYS[3]} onBack={backToHub} />;
-      case 10:
         return <FlexaClosing />;
       default:
         return null;
     }
-  }, [index, goToTakeaway, backToHub, visited]);
+  }, [index]);
 
   const progress = ((index + 1) / TOTAL_SLIDES) * 100;
 
