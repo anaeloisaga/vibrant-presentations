@@ -200,9 +200,9 @@ export function InsightDeepDive({ insight: i }: Props) {
           transition={{ delay: 0.9, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="absolute"
           style={{
-            bottom: 48,
-            right: 880,
-            width: 280,
+            bottom: 56,
+            left: 60,
+            width: 240,
             padding: 14,
             paddingBottom: i.media.caption ? 36 : 14,
             backgroundColor: "#FBF6E9",
@@ -215,7 +215,7 @@ export function InsightDeepDive({ insight: i }: Props) {
             alt={i.media.caption ?? ""}
             style={{
               width: "100%",
-              height: 200,
+              height: 170,
               objectFit: "cover",
               display: "block",
               borderRadius: 2,
