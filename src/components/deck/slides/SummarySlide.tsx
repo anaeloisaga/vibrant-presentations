@@ -17,31 +17,31 @@ export function SummarySlide() {
       icon: <Layers size={36} />,
       title: "Most players move into optimization",
       highlight: "optimization",
-      body: "Two plays are emerging next to hardware & retail: partnerships (Optimizer × HW/retail) and full-stack (HW + retail + optimization in one).",
+      body: "Beyond hardware and retail, two plays are emerging — partnerships between optimizers and HW/retail players, and full-stack models combining hardware, retail, and optimization in one.",
     },
     {
       n: "02",
       accent: ACCENT.two,
       icon: <TrendingUp size={36} />,
-      title: "Value lives in multi-market optimization",
+      title: "Multi-market revenue stacking",
       highlight: "multi-market",
-      body: "Hardware-based asset steering captures the upside. Local-only optimization mostly accrues to the customer as savings — hard to redistribute.",
+      body: "Participating in multiple flexibility markets — beyond local optimization — is what unlocks the full value of the asset. Local-only optimization mostly accrues to the customer as savings and is hard to redistribute, while hardware-based asset steering across markets captures the real upside.",
     },
     {
       n: "03",
       accent: ACCENT.three,
       icon: <Globe2 size={36} />,
-      title: "Growth = B2B, international, partnerships",
+      title: "Partnerships unlock value chains and new markets",
       highlight: "B2B",
-      body: "The next leg up comes from B2B expansion, geographic reach, and scaling sales partnerships.",
+      body: "Growth increasingly comes from leveraging partnerships to integrate deeper into the energy value chain and expand into new geographies — through B2B distribution, OEM tie-ups, and utility alliances.",
     },
     {
       n: "04",
       accent: ACCENT.four,
       icon: <Sparkles size={36} />,
-      title: "Tech-first is now table stakes",
+      title: "Tech-first is the norm",
       highlight: "table stakes",
-      body: "Top-tier in-app UX and AI-powered ops (e.g. AI call centers) are the norm — not a differentiator.",
+      body: "Cloud-to-cloud OEM integrations, top-tier in-app UX, and AI woven through operations (from call centers to optimization) are now baseline expectations rather than differentiators.",
     },
   ];
 
@@ -53,7 +53,7 @@ export function SummarySlide() {
           className="deck-body uppercase tracking-[0.4em] mb-4"
           style={{ color: "var(--deck-accent)", fontSize: 20, fontWeight: 600 }}
         >
-          Step 2 — Summary
+          2 — Summary
         </div>
         <KineticHeadline
           text="Key insights from competitors"
