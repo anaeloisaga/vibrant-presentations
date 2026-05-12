@@ -50,6 +50,7 @@ export const CLUSTERS: Record<
     label: "HW focused",
     description: "Devices in the home.",
     accent: "#5B8DEF",
+    footnote: "* Tesla also participates in optimization / aggregation in selected markets.",
   },
   retailer: {
     label: "Retailer",
