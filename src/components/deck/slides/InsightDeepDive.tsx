@@ -195,19 +195,19 @@ export function InsightDeepDive({ insight: i }: Props) {
       {/* Optional polaroid card bottom-left */}
       {i.media?.mode === "card" && (
         <motion.div
-          initial={{ opacity: 0, y: 30, rotate: -6 }}
-          animate={{ opacity: 1, y: 0, rotate: -3 }}
+          initial={{ opacity: 0, y: 40, rotate: -5 }}
+          animate={{ opacity: 1, y: 0, rotate: -2.5 }}
           transition={{ delay: 0.9, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="absolute"
           style={{
-            bottom: 56,
-            left: 60,
-            width: 240,
-            padding: 14,
-            paddingBottom: i.media.caption ? 36 : 14,
+            bottom: 48,
+            left: 64,
+            width: 360,
+            padding: 18,
+            paddingBottom: i.media.caption ? 50 : 18,
             backgroundColor: "#FBF6E9",
-            boxShadow: "0 30px 60px rgba(0,0,0,0.45)",
-            borderRadius: 6,
+            boxShadow: "0 40px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(0,0,0,0.04)",
+            borderRadius: 8,
           }}
         >
           <img
@@ -215,18 +215,18 @@ export function InsightDeepDive({ insight: i }: Props) {
             alt={i.media.caption ?? ""}
             style={{
               width: "100%",
-              height: 170,
+              height: 280,
               objectFit: "cover",
               display: "block",
-              borderRadius: 2,
+              borderRadius: 3,
             }}
           />
           {i.media.caption && (
             <div
               className="deck-body"
               style={{
-                marginTop: 10,
-                fontSize: 13,
+                marginTop: 14,
+                fontSize: 16,
                 color: "#3A3F4D",
                 textAlign: "center",
                 fontStyle: "italic",
