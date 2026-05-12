@@ -7,12 +7,10 @@ import { ClustersSlide } from "@/components/deck/slides/ClustersSlide";
 import { SummarySlide } from "@/components/deck/slides/SummarySlide";
 import { InsightDeepDive, type DeepDiveInsight } from "@/components/deck/slides/InsightDeepDive";
 import { FlexaClosing } from "@/components/deck/slides/FlexaClosing";
-import { Layers, Handshake, Cpu, TrendingUp, Cloud, Zap, Globe2, Network, Battery, ShieldCheck, DollarSign, Wrench } from "lucide-react";
-import lunarLogo from "@/assets/logos/lunar-energy.png";
+import { TrendingUp, Cloud, Zap, Globe2, Network, Battery, ShieldCheck, DollarSign, Wrench } from "lucide-react";
 import axleLogo from "@/assets/logos/axle.png";
 import amberLogo from "@/assets/logos/amber.png";
 import basePowerLogo from "@/assets/logos/base-power.png";
-import lunarSystem from "@/assets/insights/lunar-system.jpg";
 import axleHero from "@/assets/insights/axle-hero.png";
 import amberBg from "@/assets/insights/amber-bg.png";
 import baseFarmers from "@/assets/insights/base-farmers.png";
@@ -35,20 +33,18 @@ export const Route = createFileRoute("/")({
  * Slide order:
  *  0  intro logo cloud
  *  1  clustering moment
- *  2  summary of 4 insights
- *  3  deep dive 1 — Lunar
+ *  2  summary of 3 insights
+ *  3  deep dive 1 — Base Power
  *  4  deep dive 2 — Axle
  *  5  deep dive 3 — Amber
- *  6  deep dive 4 — Base Power
- *  7  Flexa closing
+ *  6  Flexa closing
  */
-const TOTAL_SLIDES = 8;
+const TOTAL_SLIDES = 7;
 
 const ACCENT = {
-  one: "#2E7AE8",   // Lunar blue
+  one: "#1A2942",   // Base Power dark
   two: "#E64545",   // Axle red
   three: "#1BB37A", // Amber green
-  four: "#1FB8A6",
 };
 
 const INSIGHTS: DeepDiveInsight[] = [
@@ -56,26 +52,26 @@ const INSIGHTS: DeepDiveInsight[] = [
     number: "01",
     insight: "Most players move into optimization",
     accent: ACCENT.one,
-    company: "Lunar Energy",
-    companyLogo: lunarLogo,
-    tagline: "Integrated hardware + software, scaled through an installer channel.",
-    heroStat: { value: "130k+", label: "assets under Lunar Gridshare across US, UK & Japan" },
-    media: { src: lunarSystem, mode: "bg" },
+    company: "Base Power",
+    companyLogo: basePowerLogo,
+    tagline: "Vertically integrated B2C gentailer offering VPP optimization.",
+    heroStat: { value: "$1.3B", label: "raised through Series C (Oct 2025) — 10,000+ TX homeowners, 250 MW managed" },
+    media: { src: baseFarmers, mode: "bg" },
     points: [
       {
-        icon: Layers,
-        title: "Hardware + software as one product",
-        body: "Lunar designs its own batteries, inverters and grid devices, all shipped pre-wired to the Gridshare VPP — customers buy one integrated system, not a bag of parts.",
+        icon: Wrench,
+        title: "Full vertical integration = unbeatable unit economics",
+        body: "Hardware, install, software and ERCOT market participation all in one — Base controls the entire stack from battery manufacture to grid dispatch, removing third-party dependencies and locking in margin.",
       },
       {
-        icon: Handshake,
-        title: "Sunrun as primary channel",
-        body: "Sunrun is both a strategic investor and the #1 US residential solar installer, giving Lunar a direct pipeline into 700k+ existing homes — no separate go-to-market needed.",
+        icon: DollarSign,
+        title: "Battery-as-a-service unlocks scale",
+        body: "Base owns the battery; customers pay a low upfront install fee plus a monthly subscription. Mass-adoption pricing turns hardware into recurring revenue and accelerates fleet growth.",
       },
       {
-        icon: Cpu,
-        title: "Software-led scale via M&A",
-        body: "By acquiring Moixa and rebranding it as Gridshare, Lunar turned its platform into an interoperable VPP that also dispatches third-party batteries, EVs and thermostats — now 130k+ assets across the US, UK and Japan.",
+        icon: ShieldCheck,
+        title: "Backup as a wedge, VPP revenue as the subsidy",
+        body: "On the unstable Texas grid, guaranteed outage protection sells reliability — and the wholesale + ancillary services revenue Base captures via its VPP funds a per-kWh rate cheaper than the market.",
       },
     ],
   },
@@ -86,6 +82,7 @@ const INSIGHTS: DeepDiveInsight[] = [
     company: "Axle",
     companyLogo: axleLogo,
     tagline: "Stacking flexibility revenue across markets.",
+    heroStat: { value: "1st", label: "company qualified as a Virtual Trading Party in Great Britain — driving wholesale market reform" },
     media: { src: axleHero, mode: "bg" },
     points: [
       {
@@ -114,6 +111,10 @@ const INSIGHTS: DeepDiveInsight[] = [
     tagline: "Australian dynamic-tariff player exporting its tech via OEM and utility deals.",
     heroStat: { value: "~70%", label: "of 3rd-party hardware market integrated with Amber's Smart Shift" },
     media: { src: amberBg, mode: "bg" },
+    extraCallout: {
+      title: "More partnership examples",
+      items: ["Uplight +", "Octopus + Uplight", "E.ON + gridX", "Lunar + Moixa"],
+    },
     points: [
       {
         icon: Globe2,
@@ -129,32 +130,6 @@ const INSIGHTS: DeepDiveInsight[] = [
         icon: Battery,
         title: "Asset expansion through acquisitions",
         body: "Acquiring ChargeHQ added EV charging management and user data, strengthening Amber's ability to optimize home energy and EV assets together — and laying the groundwork for V2G.",
-      },
-    ],
-  },
-  {
-    number: "04",
-    insight: "Tech-first is now table stakes",
-    accent: ACCENT.four,
-    company: "Base Power",
-    companyLogo: basePowerLogo,
-    tagline: "Vertical integration + battery-as-a-service, subsidized by grid revenue.",
-    media: { src: baseFarmers, mode: "card", caption: "Base × Farmers Electric Cooperative" },
-    points: [
-      {
-        icon: Wrench,
-        title: "End-to-end vertical stack",
-        body: "Hardware, install, software and market participation in one — unbeatable unit economics.",
-      },
-      {
-        icon: DollarSign,
-        title: "Battery-as-a-service",
-        body: "Base owns the battery; customer pays an install fee + monthly subscription. Mass-adoption pricing.",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Backup as a wedge",
-        body: "On the unstable Texas grid, guaranteed outage protection sells reliability — VPP revenue funds the discount.",
       },
     ],
   },
@@ -226,8 +201,6 @@ function Deck() {
       case 5:
         return <InsightDeepDive insight={INSIGHTS[2]} />;
       case 6:
-        return <InsightDeepDive insight={INSIGHTS[3]} />;
-      case 7:
         return <FlexaClosing />;
       default:
         return null;

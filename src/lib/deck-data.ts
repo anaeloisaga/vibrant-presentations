@@ -43,7 +43,7 @@ export const CLUSTERS: Record<Cluster, { label: string; description: string; acc
     label: "HW focused",
     description: "Devices in the home.",
     accent: "#5B8DEF",
-    footnote: "* Tesla also participates in optimization / aggregation and retail in selected markets.",
+    footnote: "* Tesla also participates in optimization, aggregation and retail in selected markets.",
   },
   retailer: {
     label: "Retailer",
