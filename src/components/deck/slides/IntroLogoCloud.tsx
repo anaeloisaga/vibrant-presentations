@@ -3,19 +3,32 @@ import { LOGOS } from "@/lib/deck-data";
 import { LogoChip } from "../LogoChip";
 import { KineticHeadline } from "../kinetic/KineticHeadline";
 
-/** Pseudo-random scattered positions, deterministic per logo name. */
+/** Pseudo-random scattered positions, deterministic per logo name.
+ * Avoids a centered "dead zone" so the headline stays readable. */
 function scatterPos(name: string, index: number) {
-  // Simple hash so positions are stable across renders
   let h = 0;
   for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) | 0;
   const rand = (seed: number) => {
     const x = Math.sin(seed) * 10000;
     return x - Math.floor(x);
   };
-  // Spread across 1920x1080 with margins
-  const x = 80 + rand(h + index) * (1920 - 360);
-  const y = 80 + rand(h * 7 + index * 13) * (1080 - 220);
-  const drift = (rand(h * 3) - 0.5) * 30;
+  // Headline dead-zone (centered), logos placed outside it
+  const deadW = 1100;
+  const deadH = 360;
+  const deadX = (1920 - deadW) / 2;
+  const deadY = (1080 - deadH) / 2;
+
+  let x = 60 + rand(h + index) * (1920 - 320);
+  let y = 60 + rand(h * 7 + index * 13) * (1080 - 200);
+
+  // If inside dead-zone, push to nearest side
+  if (x > deadX - 80 && x < deadX + deadW && y > deadY - 60 && y < deadY + deadH) {
+    const pushLeft = rand(h * 17) < 0.5;
+    x = pushLeft ? Math.max(40, deadX - 220 - rand(h * 19) * 80)
+                 : Math.min(1920 - 280, deadX + deadW + 40 + rand(h * 19) * 80);
+  }
+
+  const drift = (rand(h * 3) - 0.5) * 36;
   const driftDur = 6 + rand(h * 5) * 6;
   const rot = (rand(h * 11) - 0.5) * 6;
   return { x, y, drift, driftDur, rot };
@@ -55,23 +68,26 @@ export function IntroLogoCloud() {
               },
             }}
           >
-            <LogoChip logo={logo} baseSize={26} />
+            <LogoChip logo={logo} baseSize={38} />
           </motion.div>
         );
       })}
 
-      {/* Centered overlay headline with backdrop */}
+      {/* Centered headline — soft radial fade lets logos show through edges */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 55% 38% at 50% 50%, rgba(10,14,26,0.92) 0%, rgba(10,14,26,0.75) 55%, rgba(10,14,26,0) 80%)",
+        }}
+      />
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center px-16 py-12 rounded-3xl"
-          style={{
-            backgroundColor: "rgba(10, 14, 26, 0.78)",
-            backdropFilter: "blur(8px)",
-            maxWidth: 1400,
-          }}
+          className="text-center px-12"
+          style={{ maxWidth: 1300 }}
         >
           <div
             className="deck-body uppercase tracking-[0.4em] mb-6"
@@ -83,7 +99,7 @@ export function IntroLogoCloud() {
             text="The energy space, mapped."
             delay={0.9}
             style={{
-              fontSize: 140,
+              fontSize: 120,
               lineHeight: 1.0,
               color: "var(--deck-text)",
             }}
@@ -92,8 +108,8 @@ export function IntroLogoCloud() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.6, duration: 0.6 }}
-            className="deck-body mt-8"
-            style={{ color: "var(--deck-muted)", fontSize: 28 }}
+            className="deck-body mt-7"
+            style={{ color: "var(--deck-muted)", fontSize: 26 }}
           >
             We looked at 35 companies. Here's what we learned.
           </motion.p>
