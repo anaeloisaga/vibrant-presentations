@@ -12,6 +12,10 @@ import lunarLogo from "@/assets/logos/lunar-energy.png";
 import axleLogo from "@/assets/logos/axle.png";
 import amberLogo from "@/assets/logos/amber.png";
 import basePowerLogo from "@/assets/logos/base-power.png";
+import lunarApp from "@/assets/insights/lunar-app.png";
+import axleHero from "@/assets/insights/axle-hero.png";
+import amberEon from "@/assets/insights/amber-eon.png";
+import baseFarmers from "@/assets/insights/base-farmers.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -56,6 +60,7 @@ const INSIGHTS: DeepDiveInsight[] = [
     companyLogo: lunarLogo,
     tagline: "Hardware + software shipped as one product, scaled through partners.",
     heroStat: { value: "130k+", label: "assets under Lunar Gridshare across US, UK & Japan" },
+    media: { src: lunarApp, mode: "card", caption: "Lunar app — one tap, full home" },
     points: [
       {
         icon: Layers,
@@ -81,6 +86,7 @@ const INSIGHTS: DeepDiveInsight[] = [
     company: "Axle",
     companyLogo: axleLogo,
     tagline: "Stacking flexibility revenue across markets — without owning the customer.",
+    media: { src: axleHero, mode: "bg" },
     points: [
       {
         icon: TrendingUp,
@@ -107,6 +113,7 @@ const INSIGHTS: DeepDiveInsight[] = [
     companyLogo: amberLogo,
     tagline: "Australian dynamic-tariff player exporting its tech via OEM and utility deals.",
     heroStat: { value: "~70%", label: "of 3rd-party hardware market integrated with Amber's Smart Shift" },
+    media: { src: amberEon, mode: "card", caption: "E.ON Next × Amber — UK launch partner" },
     points: [
       {
         icon: Globe2,
@@ -132,6 +139,7 @@ const INSIGHTS: DeepDiveInsight[] = [
     company: "Base Power",
     companyLogo: basePowerLogo,
     tagline: "Vertical integration + battery-as-a-service, subsidized by grid revenue.",
+    media: { src: baseFarmers, mode: "card", caption: "Base × Farmers Electric Cooperative" },
     points: [
       {
         icon: Wrench,
