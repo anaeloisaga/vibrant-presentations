@@ -84,7 +84,7 @@ export const LOGOS: Logo[] = [
   { name: "uplight", cluster: "optimizer", weight: 1.1, color: "#1BB37A", image: uplightLogo },
   { name: "tilt", cluster: "optimizer", weight: 1.0, color: "#2E7AE8", image: tiltLogo },
   { name: "gridX", cluster: "optimizer", weight: 1.0, color: "#1FB8A6", image: gridxLogo, marker: "*" },
-  { name: "Beebop", cluster: "optimizer", weight: 0.95, color: "#0A0E1A", image: beebopLogo, marker: "*" },
+  { name: "Beebop", cluster: "optimizer", weight: 1.1, color: "#0A0E1A", image: beebopLogo, marker: "*" },
 
   // Full-Stack — HW-Led
   { name: "BASE", cluster: "full-stack", subCluster: "hw-led", weight: 1.05, color: "#0A0E1A", image: baseLogo },
