@@ -14,7 +14,7 @@ import amberLogo from "@/assets/logos/amber.png";
 import basePowerLogo from "@/assets/logos/base-power.png";
 import lunarSystem from "@/assets/insights/lunar-system.jpg";
 import axleHero from "@/assets/insights/axle-hero.png";
-import amberEon from "@/assets/insights/amber-eon.png";
+import amberBg from "@/assets/insights/amber-bg.png";
 import baseFarmers from "@/assets/insights/base-farmers.png";
 
 export const Route = createFileRoute("/")({
@@ -85,7 +85,7 @@ const INSIGHTS: DeepDiveInsight[] = [
     accent: ACCENT.two,
     company: "Axle",
     companyLogo: axleLogo,
-    tagline: "Stacking flexibility revenue across markets — without owning the customer.",
+    tagline: "Stacking flexibility revenue across markets.",
     media: { src: axleHero, mode: "bg" },
     points: [
       {
@@ -107,28 +107,28 @@ const INSIGHTS: DeepDiveInsight[] = [
   },
   {
     number: "03",
-    insight: "Growth = B2B, international, partnerships",
+    insight: "Partnerships unlock value chains and new markets",
     accent: ACCENT.three,
     company: "Amber",
     companyLogo: amberLogo,
     tagline: "Australian dynamic-tariff player exporting its tech via OEM and utility deals.",
     heroStat: { value: "~70%", label: "of 3rd-party hardware market integrated with Amber's Smart Shift" },
-    media: { src: amberEon, mode: "card", caption: "E.ON Next × Amber — UK launch partner" },
+    media: { src: amberBg, mode: "bg" },
     points: [
       {
         icon: Globe2,
-        title: "Europe via partnerships",
-        body: "Licensing battery optimization software to E.ON (UK trial + investor) and Ecotricity.",
+        title: "European expansion through partnerships",
+        body: "Amber is expanding overseas by partnering with international energy networks and licensing its battery optimization software — including E.ON in the UK (a live customer and investor) and Ecotricity, alongside green retailer Ecotricity.",
       },
       {
         icon: Network,
-        title: "OEM-wide compatibility",
-        body: "Smart Shift, co-developed with CSIRO, plugs into ~70% of third-party hardware in market.",
+        title: "Co-developed VPP tech & broad OEM compatibility",
+        body: "Smart Shift — Amber's proprietary VPP platform co-developed with CSIRO — powers wholesale market access and battery optimization, with APIs already integrated into ~70% of the third-party hardware market.",
       },
       {
         icon: Battery,
-        title: "Asset expansion via M&A",
-        body: "Acquired ChargeHQ to add EV charging + V2G readiness on top of home batteries.",
+        title: "Asset expansion through acquisitions",
+        body: "Acquiring ChargeHQ added EV charging management and user data, strengthening Amber's ability to optimize home energy and EV assets together — and laying the groundwork for V2G.",
       },
     ],
   },
