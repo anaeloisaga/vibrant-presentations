@@ -113,7 +113,7 @@ const INSIGHTS: DeepDiveInsight[] = [
     media: { src: amberBg, mode: "bg" },
     extraCallout: {
       title: "More partnership examples",
-      items: ["Uplight +", "Octopus + Uplight", "E.ON + gridX", "Lunar + Moixa"],
+      items: ["Octopus + Uplight", "E.ON + gridX", "Lunar + Moixa"],
     },
     points: [
       {
