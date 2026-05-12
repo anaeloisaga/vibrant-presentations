@@ -5,28 +5,28 @@ import { KineticHeadline } from "../kinetic/KineticHeadline";
 
 /** Pseudo-random scattered positions, deterministic per logo name.
  * Avoids a centered "dead zone" so the headline stays readable. */
-function scatterPos(name: string, index: number) {
+function scatterPos(name: string, index: number, total: number) {
   let h = 0;
   for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) | 0;
   const rand = (seed: number) => {
     const x = Math.sin(seed) * 10000;
     return x - Math.floor(x);
   };
-  // Headline dead-zone (centered), logos placed outside it
-  const deadW = 1100;
-  const deadH = 360;
-  const deadX = (1920 - deadW) / 2;
-  const deadY = (1080 - deadH) / 2;
 
-  let x = 60 + rand(h + index) * (1920 - 320);
-  let y = 60 + rand(h * 7 + index * 13) * (1080 - 200);
+  // Ring layout around headline — distribute logos evenly with jitter so they
+  // wrap the full canvas instead of clustering on left/right.
+  const cx = 960;
+  const cy = 540;
+  const angle = (index / total) * Math.PI * 2 + rand(h) * 0.6;
+  // Elliptical radius — wider than tall to match 16:9 canvas
+  const rx = 720 + rand(h * 3) * 160;
+  const ry = 410 + rand(h * 5) * 90;
+  let x = cx + Math.cos(angle) * rx - 110;
+  let y = cy + Math.sin(angle) * ry - 30;
 
-  // If inside dead-zone, push to nearest side
-  if (x > deadX - 80 && x < deadX + deadW && y > deadY - 60 && y < deadY + deadH) {
-    const pushLeft = rand(h * 17) < 0.5;
-    x = pushLeft ? Math.max(40, deadX - 220 - rand(h * 19) * 80)
-                 : Math.min(1920 - 280, deadX + deadW + 40 + rand(h * 19) * 80);
-  }
+  // Clamp inside slide bounds
+  x = Math.max(40, Math.min(1920 - 280, x));
+  y = Math.max(40, Math.min(1080 - 120, y));
 
   const drift = (rand(h * 3) - 0.5) * 36;
   const driftDur = 6 + rand(h * 5) * 6;
@@ -39,7 +39,7 @@ export function IntroLogoCloud() {
     <div className="relative w-full h-full">
       {/* Floating logos */}
       {LOGOS.map((logo, i) => {
-        const p = scatterPos(logo.name, i);
+        const p = scatterPos(logo.name, i, LOGOS.length);
         return (
           <motion.div
             key={logo.name}
@@ -78,7 +78,7 @@ export function IntroLogoCloud() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 55% 38% at 50% 50%, rgba(10,14,26,0.92) 0%, rgba(10,14,26,0.75) 55%, rgba(10,14,26,0) 80%)",
+            "radial-gradient(ellipse 50% 34% at 50% 50%, rgba(10,14,26,0.55) 0%, rgba(10,14,26,0.35) 55%, rgba(10,14,26,0) 80%)",
         }}
       />
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
