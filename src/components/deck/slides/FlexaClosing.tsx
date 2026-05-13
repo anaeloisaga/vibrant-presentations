@@ -3,9 +3,9 @@ import { KineticHeadline } from "../kinetic/KineticHeadline";
 import flexaBg from "@/assets/insights/flexa-bg.jpg";
 
 const POINTS = [
-  "Players are betting big on flexibility and optimization — the market is moving where we're already pointed.",
-  "We're working towards multi-market revenue stacking, layering value across flexibility and wholesale markets on the same asset.",
-  "We're leveraging partnerships to integrate deeper into the energy value chain and expand into new segments.",
+  "Players are betting big on flexibility and optimization.",
+  "We're working towards multi-market revenue stacking — not there yet, but it's where the real value sits.",
+  "We're trying to leverage partnerships to integrate deeper into the energy value chain and expand into new segments.",
 ];
 
 const CHALLENGES = [
