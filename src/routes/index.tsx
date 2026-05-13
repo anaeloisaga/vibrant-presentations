@@ -60,17 +60,17 @@ const INSIGHTS: DeepDiveInsight[] = [
     points: [
       {
         icon: Wrench,
-        title: "Vertical integration = optimization edge",
+        title: "Full-stack control, direct dispatch",
         body: "Owning hardware, install and ERCOT market access end-to-end lets Base optimize dispatch directly — no third parties between the battery and the wholesale market.",
       },
       {
         icon: DollarSign,
-        title: "VPP revenue subsidizes the customer",
+        title: "VPP earnings pay down the bill",
         body: "Wholesale and ancillary services revenue from optimized dispatch funds a per-kWh rate cheaper than the market — the VPP pays down the bill.",
       },
       {
         icon: ShieldCheck,
-        title: "Backup as the wedge into the home",
+        title: "Backup sells the install",
         body: "Outage protection on Texas's unstable grid sells the install — once in the home, Base owns the asset and its full optimization upside.",
       },
     ],
