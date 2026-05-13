@@ -52,49 +52,95 @@ export function SummarySlide() {
         />
       </div>
 
-      {/* 3 equal-sized insight cards */}
-      <div className="grid grid-cols-3 gap-7 flex-1">
-        {cards.map((c, i) => (
-          <motion.div
-            key={c.n}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 + i * 0.12, duration: 0.5 }}
-            className="rounded-3xl p-10 flex flex-col"
-            style={{
-              backgroundColor: "var(--deck-surface)",
-              color: "var(--deck-text-dark)",
-              borderLeft: `10px solid ${c.accent}`,
-            }}
-          >
-            <div className="flex items-center justify-between mb-6">
-              <span
-                className="deck-display"
-                style={{ fontSize: 64, color: c.accent, lineHeight: 1 }}
-              >
-                {c.n}
-              </span>
-              <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                style={{ backgroundColor: c.accent, color: "#FBF6E9" }}
-              >
-                {c.icon}
-              </div>
+      {/* Hero card on top, two cards below */}
+      <div className="flex flex-col gap-7 flex-1">
+        {/* Hero card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="rounded-3xl p-10 flex items-start gap-10"
+          style={{
+            backgroundColor: "var(--deck-surface)",
+            color: "var(--deck-text-dark)",
+            borderLeft: `12px solid ${cards[0].accent}`,
+            flex: "1 1 0",
+          }}
+        >
+          <div className="flex flex-col items-center gap-5" style={{ minWidth: 140 }}>
+            <span
+              className="deck-display"
+              style={{ fontSize: 88, color: cards[0].accent, lineHeight: 1 }}
+            >
+              {cards[0].n}
+            </span>
+            <div
+              className="w-20 h-20 rounded-2xl flex items-center justify-center"
+              style={{ backgroundColor: cards[0].accent, color: "#FBF6E9" }}
+            >
+              {cards[0].icon}
             </div>
+          </div>
+          <div className="flex-1">
             <h3
               className="deck-display"
-              style={{ fontSize: 32, lineHeight: 1.15, marginBottom: 18 }}
+              style={{ fontSize: 44, lineHeight: 1.1, marginBottom: 14 }}
             >
-              {c.title}
+              {cards[0].title}
             </h3>
             <p
               className="deck-body"
-              style={{ fontSize: 20, color: "#3A3F4D", lineHeight: 1.45 }}
+              style={{ fontSize: 22, color: "#3A3F4D", lineHeight: 1.45, maxWidth: 1200 }}
             >
-              {c.body}
+              {cards[0].body}
             </p>
-          </motion.div>
-        ))}
+          </div>
+        </motion.div>
+
+        {/* Two cards below */}
+        <div className="grid grid-cols-2 gap-7" style={{ flex: "1 1 0" }}>
+          {cards.slice(1).map((c, i) => (
+            <motion.div
+              key={c.n}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55 + i * 0.12, duration: 0.5 }}
+              className="rounded-3xl p-9 flex flex-col"
+              style={{
+                backgroundColor: "var(--deck-surface)",
+                color: "var(--deck-text-dark)",
+                borderLeft: `10px solid ${c.accent}`,
+              }}
+            >
+              <div className="flex items-center justify-between mb-5">
+                <span
+                  className="deck-display"
+                  style={{ fontSize: 64, color: c.accent, lineHeight: 1 }}
+                >
+                  {c.n}
+                </span>
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                  style={{ backgroundColor: c.accent, color: "#FBF6E9" }}
+                >
+                  {c.icon}
+                </div>
+              </div>
+              <h3
+                className="deck-display"
+                style={{ fontSize: 30, lineHeight: 1.15, marginBottom: 14 }}
+              >
+                {c.title}
+              </h3>
+              <p
+                className="deck-body"
+                style={{ fontSize: 19, color: "#3A3F4D", lineHeight: 1.45 }}
+              >
+                {c.body}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
