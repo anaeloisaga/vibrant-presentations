@@ -90,13 +90,13 @@ export function SummarySlide() {
 
             <h3
               className="deck-display"
-              style={{ fontSize: 30, lineHeight: 1.15, marginBottom: 16 }}
+              style={{ fontSize: 38, lineHeight: 1.15, marginBottom: 18 }}
             >
               {c.title}
             </h3>
             <p
               className="deck-body"
-              style={{ fontSize: 19, color: "#3A3F4D", lineHeight: 1.5 }}
+              style={{ fontSize: 24, color: "#3A3F4D", lineHeight: 1.45 }}
             >
               {c.body}
             </p>
