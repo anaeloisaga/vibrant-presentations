@@ -191,62 +191,63 @@ export function InsightDeepDive({ insight: i }: Props) {
         {i.points.map((p, idx) => {
           const Icon = p.icon;
           return (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, x: 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6 + idx * 0.18, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="rounded-3xl p-8 flex items-start gap-6"
-              style={{
-                backgroundColor: "var(--deck-surface)",
-                color: "var(--deck-text-dark)",
-                borderLeft: `8px solid ${i.accent}`,
-              }}
-            >
-              <div
-                className="flex-shrink-0 rounded-2xl flex items-center justify-center"
-                style={{
-                  width: 72,
-                  height: 72,
-                  backgroundColor: i.accent,
-                  color: "#FBF6E9",
-                }}
-              >
-                <Icon size={38} />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div
-                  className="flex items-center gap-3 flex-wrap"
-                  style={{ marginBottom: 8 }}
-                >
-                  <h3
-                    className="deck-display"
-                    style={{ fontSize: 28, lineHeight: 1.15 }}
-                  >
-                    {p.title}
-                  </h3>
-                  {p.logos?.map((l) => (
+            <div key={idx} className="flex items-center gap-5">
+              {/* Logos on the left, bigger */}
+              {p.logos && p.logos.length > 0 && (
+                <div className="flex flex-col gap-4 flex-shrink-0">
+                  {p.logos.map((l) => (
                     <div
                       key={l.alt}
-                      className="rounded-lg flex items-center justify-center px-2 py-1"
-                      style={{ backgroundColor: "#FBF6E9", height: 38 }}
+                      className="rounded-2xl flex items-center justify-center p-4"
+                      style={{ backgroundColor: "#FBF6E9", width: 120, height: 120 }}
                     >
                       <img
                         src={l.src}
                         alt={l.alt}
-                        style={{ height: 24, width: "auto", objectFit: "contain" }}
+                        style={{ height: 80, width: "auto", objectFit: "contain" }}
                       />
                     </div>
                   ))}
                 </div>
-                <p
-                  className="deck-body"
-                  style={{ fontSize: 19, lineHeight: 1.4, color: "#3A3F4D" }}
+              )}
+              <motion.div
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 + idx * 0.18, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="rounded-3xl p-8 flex items-start gap-6 flex-1"
+                style={{
+                  backgroundColor: "var(--deck-surface)",
+                  color: "var(--deck-text-dark)",
+                  borderLeft: `8px solid ${i.accent}`,
+                }}
+              >
+                <div
+                  className="flex-shrink-0 rounded-2xl flex items-center justify-center"
+                  style={{
+                    width: 72,
+                    height: 72,
+                    backgroundColor: i.accent,
+                    color: "#FBF6E9",
+                  }}
                 >
-                  {p.body}
-                </p>
-              </div>
-            </motion.div>
+                  <Icon size={38} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3
+                    className="deck-display"
+                    style={{ fontSize: 28, lineHeight: 1.15, marginBottom: 8 }}
+                  >
+                    {p.title}
+                  </h3>
+                  <p
+                    className="deck-body"
+                    style={{ fontSize: 19, lineHeight: 1.4, color: "#3A3F4D" }}
+                  >
+                    {p.body}
+                  </p>
+                </div>
+              </motion.div>
+            </div>
           );
         })}
       </div>
