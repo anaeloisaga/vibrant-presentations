@@ -3,7 +3,7 @@ import { KineticHeadline } from "../kinetic/KineticHeadline";
 import flexaBg from "@/assets/insights/flexa-bg.jpg";
 
 const POINTS = [
-  "Players are betting big on flexibility and optimization — let's stay focused on this track and keep building.",
+  "Flex and optimization is getting crowded — the winners will be those who connect to the most energy assets, fastest.",
   "We should keep working towards multi-market revenue stacking, as the real value lies there.",
   "We should keep working towards leveraging partnerships to integrate deeper into the energy value chain and expand into new segments.",
 ];

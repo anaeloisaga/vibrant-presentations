@@ -6,6 +6,8 @@ export interface DeepDivePoint {
   icon: LucideIcon;
   title: string;
   body: string;
+  /** Optional brand logos shown next to the title (e.g. partner refs). */
+  logos?: { src: string; alt: string }[];
 }
 
 export interface DeepDiveInsight {
@@ -213,12 +215,30 @@ export function InsightDeepDive({ insight: i }: Props) {
                 <Icon size={38} />
               </div>
               <div className="flex-1 min-w-0">
-                <h3
-                  className="deck-display"
-                  style={{ fontSize: 28, lineHeight: 1.15, marginBottom: 8 }}
+                <div
+                  className="flex items-center gap-3 flex-wrap"
+                  style={{ marginBottom: 8 }}
                 >
-                  {p.title}
-                </h3>
+                  <h3
+                    className="deck-display"
+                    style={{ fontSize: 28, lineHeight: 1.15 }}
+                  >
+                    {p.title}
+                  </h3>
+                  {p.logos?.map((l) => (
+                    <div
+                      key={l.alt}
+                      className="rounded-lg flex items-center justify-center px-2 py-1"
+                      style={{ backgroundColor: "#FBF6E9", height: 38 }}
+                    >
+                      <img
+                        src={l.src}
+                        alt={l.alt}
+                        style={{ height: 24, width: "auto", objectFit: "contain" }}
+                      />
+                    </div>
+                  ))}
+                </div>
                 <p
                   className="deck-body"
                   style={{ fontSize: 19, lineHeight: 1.4, color: "#3A3F4D" }}

@@ -14,8 +14,8 @@ export function SummarySlide() {
       n: "01",
       accent: ACCENT.one,
       icon: <Layers size={36} />,
-      title: "Most players move into optimization",
-      highlight: "optimization",
+      title: "Players move into owning the full value chain",
+      highlight: "full value chain",
       body: "Beyond hardware and retail, two plays are emerging — partnerships between optimizers and HW/retail players, and full-stack models combining hardware, retail, and optimization in one.",
     },
     {

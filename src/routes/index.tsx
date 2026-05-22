@@ -11,6 +11,10 @@ import { TrendingUp, Cloud, Globe2, Network, Layers, ShieldCheck, DollarSign, Wr
 import axleLogo from "@/assets/logos/axle.png";
 import octopusLogo from "@/assets/logos/octopus.png";
 import basePowerLogo from "@/assets/logos/base.png";
+import uplightLogo from "@/assets/logos/uplight.png";
+import krakenLogo from "@/assets/logos/kraken.png";
+import bydLogo from "@/assets/logos/byd.png";
+import teslaLogo from "@/assets/logos/tesla.png";
 import axleHero from "@/assets/insights/axle-hero.png";
 import octopusBg from "@/assets/insights/octopus-bg.png";
 import baseBg from "@/assets/insights/base-bg.png";
@@ -118,18 +122,24 @@ const INSIGHTS: DeepDiveInsight[] = [
     points: [
       {
         icon: Globe2,
-        title: "Majority stake in Uplight — instant US footprint",
-        body: "In March 2026 Octopus took a majority stake in Uplight (with Schneider Electric), buying access to 85+ US utility relationships, 8 of the top 10 North American utilities, and ~8.5 GW of flexible load — instead of building that customer layer from scratch.",
+        title: "Majority stake — instant US footprint",
+        body: "Buying into 85+ US utility relationships and ~8.5 GW of flexible load instead of building it.",
+        logos: [{ src: uplightLogo, alt: "Uplight" }],
       },
       {
         icon: Network,
         title: "Players are betting big on flex",
-        body: "Octopus's $8.65B Kraken spin-out, the Uplight majority stake, and Schneider's co-investment show that incumbents and challengers alike are putting serious capital behind flexibility and demand-side optimization — it's becoming the strategic core of the energy stack.",
+        body: "$8.65B spin-out valuation — incumbents and challengers are putting serious capital behind flexibility.",
+        logos: [{ src: krakenLogo, alt: "Kraken" }],
       },
       {
         icon: Layers,
-        title: "Vertical integration across the demand stack",
-        body: "Kraken (OS) + Uplight (customer engagement / DERMS) + Schneider (grid hardware) stitches together an end-to-end demand-side platform. Signals where the market is heading — both a threat and a template to watch closely.",
+        title: "Vertical integration",
+        body: "Stitching OEM hardware, software, and customer layers into an end-to-end demand-side platform.",
+        logos: [
+          { src: bydLogo, alt: "BYD" },
+          { src: teslaLogo, alt: "Tesla" },
+        ],
       },
     ],
   },
