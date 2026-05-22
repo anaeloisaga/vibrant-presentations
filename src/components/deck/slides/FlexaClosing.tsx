@@ -3,9 +3,10 @@ import { KineticHeadline } from "../kinetic/KineticHeadline";
 import flexaBg from "@/assets/insights/flexa-bg.jpg";
 
 const POINTS = [
-  "Double down on optimization — it's where every serious player is heading, and where we need to keep pushing.",
-  "Build toward multi-market revenue stacking: today we mostly capture local value, the real upside sits in stacking wholesale + flexibility markets on the same asset.",
-  "Use partnerships to integrate deeper into the value chain and open new segments — OEM cloud-to-cloud, utility alliances, and B2B distribution.",
+  "Players are betting big on flexibility and optimization.",
+  "We're working towards multi-market revenue stacking — not there yet, but it's where the real value sits.",
+  "We're trying to leverage partnerships to integrate deeper into the energy value chain and expand into new segments.",
+  "Own the customer acquisition channel — HW- or tariff-led — and combine the offering with optimization to target every household (full-stack play, à la Base / Octopus / 1Komma5).",
 ];
 
 export function FlexaClosing() {
