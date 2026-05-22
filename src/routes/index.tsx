@@ -7,9 +7,9 @@ import { ClustersSlide } from "@/components/deck/slides/ClustersSlide";
 import { SummarySlide } from "@/components/deck/slides/SummarySlide";
 import { InsightDeepDive, type DeepDiveInsight } from "@/components/deck/slides/InsightDeepDive";
 import { FlexaClosing } from "@/components/deck/slides/FlexaClosing";
-import { TrendingUp, Cloud, Zap, Globe2, Network, Battery, ShieldCheck, DollarSign, Wrench } from "lucide-react";
+import { TrendingUp, Cloud, Globe2, Network, Layers, ShieldCheck, DollarSign, Wrench, Feather } from "lucide-react";
 import axleLogo from "@/assets/logos/axle.png";
-import amberLogo from "@/assets/logos/amber.png";
+import octopusLogo from "@/assets/logos/octopus.png";
 import basePowerLogo from "@/assets/logos/base.png";
 import axleHero from "@/assets/insights/axle-hero.png";
 import amberBg from "@/assets/insights/amber-bg.png";
@@ -44,7 +44,7 @@ const TOTAL_SLIDES = 7;
 const ACCENT = {
   one: "#1A2942",   // Base Power dark
   two: "#E64545",   // Axle red
-  three: "#1BB37A", // Amber green
+  three: "#7C3AED", // Octopus purple
 };
 
 const INSIGHTS: DeepDiveInsight[] = [
@@ -82,23 +82,23 @@ const INSIGHTS: DeepDiveInsight[] = [
     company: "Axle",
     companyLogo: axleLogo,
     tagline: "Stacking flexibility revenue across markets.",
-    heroStat: { value: "1st", label: "company qualified as a Virtual Trading Party in Great Britain — driving wholesale market reform" },
+    heroStat: { value: "85+ MW", label: "managed across UK and European flexibility markets" },
     media: { src: axleHero, mode: "bg" },
     points: [
       {
         icon: TrendingUp,
         title: "Multi-market revenue stacking",
-        body: "Axle participates across UK flexibility and wholesale markets simultaneously, layering revenues on the same asset — with assets auto-registered as new markets open.",
+        body: "Axle participates across UK and French flexibility and wholesale markets simultaneously, layering revenues on the same asset — with assets auto-registered as new markets open.",
       },
       {
         icon: Cloud,
-        title: "Cloud-to-cloud connectivity",
+        title: "Cloud-to-cloud connectivity (C2C will be hard in new markets)",
         body: "Connects directly to OEM cloud APIs — no gateway, no extra hardware in the home. Dispatch runs entirely server-side, making onboarding frictionless and globally scalable.",
       },
       {
-        icon: Zap,
-        title: "First-mover advantage & speed-to-market",
-        body: "Axle already holds trading licenses and market registrations across multiple European countries, so partners go live without waiting for regulatory approval. It was the first company to qualify as a Virtual Trading Party in Great Britain — helping draft the code changes that unlocked wholesale participation for behind-the-meter assets.",
+        icon: Feather,
+        title: "Light, adaptable solution",
+        body: "Software-only, no hardware in the home, and pre-integrated with major OEM clouds — Axle's stack can be dropped into a new market, OEM, or partner setup quickly, without long hardware or install rollouts.",
       },
     ],
   },
@@ -106,30 +106,30 @@ const INSIGHTS: DeepDiveInsight[] = [
     number: "03",
     insight: "Partnerships unlock value chains and new markets",
     accent: ACCENT.three,
-    company: "Amber",
-    companyLogo: amberLogo,
-    tagline: "Australian dynamic-tariff player exporting its tech via OEM and utility deals.",
-    heroStat: { value: "~70%", label: "of 3rd-party hardware market integrated with Amber's Smart Shift" },
+    company: "Octopus Energy",
+    companyLogo: octopusLogo,
+    tagline: "UK-based energy group scaling globally via acquisitions, Kraken licensing, and utility partnerships.",
+    heroStat: { value: "$8.65B", label: "Kraken valuation at spin-out — Octopus's B2B platform now serves utilities far beyond its own retail base" },
     media: { src: amberBg, mode: "bg" },
     extraCallout: {
       title: "More partnership examples",
-      items: ["Octopus + Uplight", "E.ON + gridX", "Lunar + Moixa"],
+      items: ["E.ON + gridX", "Lunar + Moixa", "E.ON + Amber"],
     },
     points: [
       {
         icon: Globe2,
-        title: "European expansion through partnerships",
-        body: "Amber is expanding overseas by partnering with international energy networks and licensing its battery optimization software — including E.ON in the UK (a live customer and investor) and Ecotricity, alongside green retailer Ecotricity.",
+        title: "Majority stake in Uplight — instant US footprint",
+        body: "In March 2026 Octopus took a majority stake in Uplight (with Schneider Electric), buying access to 85+ US utility relationships, 8 of the top 10 North American utilities, and ~8.5 GW of flexible load — instead of building that customer layer from scratch.",
       },
       {
         icon: Network,
-        title: "Co-developed VPP tech & broad OEM compatibility",
-        body: "Smart Shift — Amber's proprietary VPP platform co-developed with CSIRO — powers wholesale market access and battery optimization, with APIs already integrated into ~70% of the third-party hardware market.",
+        title: "Kraken licensing as a B2B wedge",
+        body: "Kraken — Octopus's energy OS — is licensed to E.ON, Origin, EDF, Tokyo Gas and others, and is now spinning out at a ~$8.65B valuation. The platform monetises far beyond Octopus's own retail customers and locks utilities into the Octopus ecosystem.",
       },
       {
-        icon: Battery,
-        title: "Asset expansion through acquisitions",
-        body: "Acquiring ChargeHQ added EV charging management and user data, strengthening Amber's ability to optimize home energy and EV assets together — and laying the groundwork for V2G.",
+        icon: Layers,
+        title: "Vertical integration across the demand stack",
+        body: "Kraken (OS) + Uplight (customer engagement / DERMS) + Schneider (grid hardware) stitches together an end-to-end demand-side platform. Signals where the market is heading — both a threat and a template to watch closely.",
       },
     ],
   },

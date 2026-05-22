@@ -5,7 +5,7 @@ import { Layers, TrendingUp, Globe2 } from "lucide-react";
 const ACCENT = {
   one: "#1A2942",   // Base Power dark
   two: "#E64545",   // Axle red
-  three: "#1BB37A", // Amber green
+  three: "#7C3AED", // Octopus purple
 };
 
 export function SummarySlide() {
