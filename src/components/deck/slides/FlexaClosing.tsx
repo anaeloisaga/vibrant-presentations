@@ -3,13 +3,9 @@ import { KineticHeadline } from "../kinetic/KineticHeadline";
 import flexaBg from "@/assets/insights/flexa-bg.jpg";
 
 const POINTS = [
-  "Players are betting big on flexibility and optimization.",
-  "We're working towards multi-market revenue stacking — not there yet, but it's where the real value sits.",
-  "We're trying to leverage partnerships to integrate deeper into the energy value chain and expand into new segments.",
-];
-
-const CHALLENGES = [
-  "How can we do cloud-to-cloud connectivity at the OEM level — without gateways in the home?",
+  "Double down on optimization — it's where every serious player is heading, and where we need to keep pushing.",
+  "Build toward multi-market revenue stacking: today we mostly capture local value, the real upside sits in stacking wholesale + flexibility markets on the same asset.",
+  "Use partnerships to integrate deeper into the value chain and open new segments — OEM cloud-to-cloud, utility alliances, and B2B distribution.",
 ];
 
 export function FlexaClosing() {
@@ -88,33 +84,6 @@ export function FlexaClosing() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.0, duration: 0.6 }}
-          className="mt-12 max-w-[1400px] rounded-2xl p-7"
-          style={{
-            border: "2px dashed var(--deck-accent)",
-            backgroundColor: "rgba(255, 122, 26, 0.08)",
-          }}
-        >
-          <div
-            className="deck-body uppercase tracking-[0.3em] mb-4"
-            style={{ color: "var(--deck-accent)", fontSize: 16, fontWeight: 700 }}
-          >
-            Open challenges
-          </div>
-          {CHALLENGES.map((c) => (
-            <p
-              key={c}
-              className="deck-body"
-              style={{ fontSize: 24, lineHeight: 1.4, color: "var(--deck-text)" }}
-            >
-              {c}
-            </p>
-          ))}
-        </motion.div>
       </div>
     </div>
   );
