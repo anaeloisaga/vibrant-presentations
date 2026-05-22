@@ -54,7 +54,7 @@ const ACCENT = {
 const INSIGHTS: DeepDiveInsight[] = [
   {
     number: "01",
-    insight: "Most players move into optimization",
+    insight: "Players move into owning the full value chain",
     accent: ACCENT.one,
     company: "Base Power",
     companyLogo: basePowerLogo,
