@@ -111,6 +111,7 @@ export const LOGOS: Logo[] = [
     weight: 1.3,
     color: "#D946EF",
     image: octopusLogo,
+    marker: "*",
   },
   { name: "amber", cluster: "full-stack", subCluster: "tariff-led", weight: 1.15, color: "#0A0E1A", image: amberLogo },
 ];
