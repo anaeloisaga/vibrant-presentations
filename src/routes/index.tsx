@@ -12,7 +12,7 @@ import axleLogo from "@/assets/logos/axle.png";
 import octopusLogo from "@/assets/logos/octopus.png";
 import basePowerLogo from "@/assets/logos/base.png";
 import axleHero from "@/assets/insights/axle-hero.png";
-import amberBg from "@/assets/insights/amber-bg.png";
+import octopusBg from "@/assets/insights/octopus-bg.png";
 import baseBg from "@/assets/insights/base-bg.png";
 
 export const Route = createFileRoute("/")({
@@ -109,8 +109,8 @@ const INSIGHTS: DeepDiveInsight[] = [
     company: "Octopus Energy",
     companyLogo: octopusLogo,
     tagline: "UK-based energy group scaling globally via acquisitions, Kraken licensing, and utility partnerships.",
-    heroStat: { value: "$8.65B", label: "Kraken valuation at spin-out — Octopus's B2B platform now serves utilities far beyond its own retail base" },
-    media: { src: amberBg, mode: "bg" },
+    heroStat: { value: "10M+", label: "customers on Octopus globally — anchoring a full-stack demand-side platform built through acquisitions and partnerships" },
+    media: { src: octopusBg, mode: "bg" },
     extraCallout: {
       title: "More partnership examples",
       items: ["E.ON + gridX", "Lunar + Moixa", "E.ON + Amber"],
@@ -123,8 +123,8 @@ const INSIGHTS: DeepDiveInsight[] = [
       },
       {
         icon: Network,
-        title: "Kraken licensing as a B2B wedge",
-        body: "Kraken — Octopus's energy OS — is licensed to E.ON, Origin, EDF, Tokyo Gas and others, and is now spinning out at a ~$8.65B valuation. The platform monetises far beyond Octopus's own retail customers and locks utilities into the Octopus ecosystem.",
+        title: "Players are betting big on flex",
+        body: "Octopus's $8.65B Kraken spin-out, the Uplight majority stake, and Schneider's co-investment show that incumbents and challengers alike are putting serious capital behind flexibility and demand-side optimization — it's becoming the strategic core of the energy stack.",
       },
       {
         icon: Layers,
