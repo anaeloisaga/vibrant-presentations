@@ -3,7 +3,7 @@ import { KineticHeadline } from "../kinetic/KineticHeadline";
 import flexaBg from "@/assets/insights/flexa-bg.jpg";
 
 const POINTS = [
-  "Flex and optimization is getting crowded — the winners will be those who connect to the most energy assets, fastest.",
+  "Flexibility and optimization are becoming increasingly crowded spaces. We're well-positioned, but we need to keep pushing to capture more of it.",
   "We should keep working towards multi-market revenue stacking, as the real value lies there.",
   "We should keep working towards leveraging partnerships to integrate deeper into the energy value chain and expand into new segments.",
 ];
