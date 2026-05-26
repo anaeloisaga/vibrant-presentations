@@ -52,16 +52,16 @@ export function LogoChip({ logo, baseSize = 28, uniform = false }: LogoChipProps
           <span
             className="deck-body absolute flex items-center justify-center rounded-full"
             style={{
-              top: -10,
-              left: -10,
-              width: fontSize * 1.25,
-              height: fontSize * 1.25,
-              fontSize: fontSize * 0.75,
+              top: -6,
+              left: -6,
+              width: fontSize * 0.85,
+              height: fontSize * 0.85,
+              fontSize: fontSize * 0.5,
               fontWeight: 700,
               backgroundColor: "#8A8F99",
               color: "#FBF6E9",
               lineHeight: 1,
-              boxShadow: "0 2px 6px rgba(0,0,0,0.25)",
+              boxShadow: "0 1px 4px rgba(0,0,0,0.25)",
             }}
           >
             {logo.detailNumber}
@@ -99,16 +99,16 @@ export function LogoChip({ logo, baseSize = 28, uniform = false }: LogoChipProps
         <span
           className="deck-body absolute flex items-center justify-center rounded-full"
           style={{
-            top: -10,
-            left: -10,
-            width: fontSize * 1.25,
-            height: fontSize * 1.25,
-            fontSize: fontSize * 0.75,
+            top: -6,
+            left: -6,
+            width: fontSize * 0.85,
+            height: fontSize * 0.85,
+            fontSize: fontSize * 0.5,
             fontWeight: 700,
             backgroundColor: "#8A8F99",
             color: "#FBF6E9",
             lineHeight: 1,
-            boxShadow: "0 2px 6px rgba(0,0,0,0.25)",
+            boxShadow: "0 1px 4px rgba(0,0,0,0.25)",
           }}
         >
           {logo.detailNumber}
