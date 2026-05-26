@@ -87,7 +87,7 @@ const INSIGHTS: DeepDiveInsight[] = [
     company: "Axle",
     companyLogo: axleLogo,
     tagline: "Stacking flexibility revenue across markets.",
-    heroStat: { value: "85+ MW", label: "managed across UK and European flexibility markets" },
+    heroStat: { value: "> 1 GW", label: "managed across UK and European flexibility markets" },
     media: { src: axleHero, mode: "bg" },
     points: [
       {
