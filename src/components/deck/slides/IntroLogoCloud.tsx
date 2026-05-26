@@ -68,7 +68,7 @@ export function IntroLogoCloud() {
               },
             }}
           >
-            <LogoChip logo={logo} baseSize={38} />
+            <LogoChip logo={logo} baseSize={38} hideAnnotations />
           </motion.div>
         );
       })}
