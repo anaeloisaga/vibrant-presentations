@@ -46,6 +46,27 @@ export function ClustersSlide() {
           text="4 archetypes, clustered by core activities in the residential space"
           style={{ fontSize: 56, lineHeight: 1.05, color: "var(--deck-text)" }}
         />
+        <div
+          className="deck-body flex items-center justify-center gap-3 mt-5"
+          style={{ color: "var(--deck-muted)", fontSize: 18 }}
+        >
+          <span
+            className="flex items-center justify-center rounded-full"
+            style={{
+              width: 28,
+              height: 28,
+              backgroundColor: "#8A8F99",
+              color: "#FBF6E9",
+              fontSize: 16,
+              fontWeight: 700,
+              lineHeight: 1,
+              boxShadow: "0 2px 6px rgba(0,0,0,0.25)",
+            }}
+          >
+            x
+          </span>
+          <span>Detailed in the following</span>
+        </div>
       </div>
 
       {/* 2x2 grid of equal-sized cluster boxes */}
