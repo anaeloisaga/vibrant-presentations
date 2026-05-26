@@ -7,6 +7,8 @@ interface LogoChipProps {
   baseSize?: number;
   /** When true, ignore per-logo weight so every chip renders the same size */
   uniform?: boolean;
+  /** When true, hide marker (*) and detailNumber callouts */
+  hideAnnotations?: boolean;
 }
 
 /**
