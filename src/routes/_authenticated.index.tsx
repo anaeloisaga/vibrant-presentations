@@ -18,6 +18,7 @@ import teslaLogo from "@/assets/logos/tesla.png";
 import axleHero from "@/assets/insights/axle-hero.png";
 import octopusBg from "@/assets/insights/octopus-bg.png";
 import baseBg from "@/assets/insights/base-bg.png";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_authenticated/")({
   head: () => ({
