@@ -171,7 +171,7 @@ export function ClustersSlide() {
                         </div>
                         <div className="flex-1 flex flex-wrap items-center justify-center content-center gap-4">
                           {col.logos.map((logo) => (
-                            <LogoChip key={logo.name} logo={logo} baseSize={42} uniform hideAnnotations />
+                            <LogoChip key={logo.name} logo={logo} baseSize={42} uniform />
                           ))}
                         </div>
                       </div>
@@ -190,7 +190,7 @@ export function ClustersSlide() {
                 }}
               >
                 {LOGOS.filter((l) => l.cluster === cKey).map((logo) => (
-                  <LogoChip key={logo.name} logo={logo} baseSize={44} uniform hideAnnotations />
+                  <LogoChip key={logo.name} logo={logo} baseSize={44} uniform />
                 ))}
               </div>
             )}
