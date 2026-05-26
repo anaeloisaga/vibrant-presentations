@@ -268,6 +268,14 @@ export function InsightDeepDive({ insight: i }: Props) {
                   >
                     {p.body}
                   </p>
+                  {p.callout && (
+                    <p
+                      className="deck-body mt-3"
+                      style={{ fontSize: 16, lineHeight: 1.35, color: "#8A8F99", fontStyle: "italic" }}
+                    >
+                      {p.callout}
+                    </p>
+                  )}
                 </div>
               </motion.div>
             </div>
