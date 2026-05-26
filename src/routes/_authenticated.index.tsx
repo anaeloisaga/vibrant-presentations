@@ -18,8 +18,9 @@ import teslaLogo from "@/assets/logos/tesla.png";
 import axleHero from "@/assets/insights/axle-hero.png";
 import octopusBg from "@/assets/insights/octopus-bg.png";
 import baseBg from "@/assets/insights/base-bg.png";
+import { supabase } from "@/integrations/supabase/client";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/_authenticated/")({
   head: () => ({
     meta: [
       { title: "Energy competitor analysis — Flexa" },
@@ -292,6 +293,20 @@ function Deck() {
           </span>
         </div>
       </div>
+
+      {/* Sign out (bottom-right) */}
+      <button
+        onClick={() => supabase.auth.signOut()}
+        className="fixed bottom-6 right-6 z-50 px-3 py-1.5 rounded-full text-xs backdrop-blur transition-colors hover:bg-white/10"
+        style={{
+          backgroundColor: "rgba(10, 14, 26, 0.6)",
+          border: "1px solid rgba(251, 246, 233, 0.12)",
+          color: "var(--deck-muted)",
+        }}
+        aria-label="Sign out"
+      >
+        Sign out
+      </button>
     </div>
   );
 }
