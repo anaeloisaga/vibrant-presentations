@@ -7,13 +7,15 @@ interface LogoChipProps {
   baseSize?: number;
   /** When true, ignore per-logo weight so every chip renders the same size */
   uniform?: boolean;
+  /** When true, hide marker (*) and detailNumber callouts */
+  hideAnnotations?: boolean;
 }
 
 /**
  * Brand-styled text "logo" chip — pill with the company name in its brand color.
  * Uses motion.div with layoutId so it can be smoothly tweened between slides.
  */
-export function LogoChip({ logo, baseSize = 28, uniform = false }: LogoChipProps) {
+export function LogoChip({ logo, baseSize = 28, uniform = false, hideAnnotations = false }: LogoChipProps) {
   const fontSize = baseSize * (uniform ? 1 : logo.weight);
   if (logo.image) {
     const height = fontSize * 1.6;
@@ -33,7 +35,7 @@ export function LogoChip({ logo, baseSize = 28, uniform = false }: LogoChipProps
           style={{ height: height * 0.6, width: "auto", objectFit: "contain", display: "block" }}
           draggable={false}
         />
-        {logo.marker && (
+        {logo.marker && !hideAnnotations && (
           <span
             className="deck-body absolute"
             style={{
@@ -48,7 +50,7 @@ export function LogoChip({ logo, baseSize = 28, uniform = false }: LogoChipProps
             {logo.marker}
           </span>
         )}
-        {logo.detailNumber != null && (
+        {logo.detailNumber != null && !hideAnnotations && (
           <span
             className="deck-body absolute flex items-center justify-center rounded-full"
             style={{
@@ -84,7 +86,7 @@ export function LogoChip({ logo, baseSize = 28, uniform = false }: LogoChipProps
       }}
     >
       {logo.name}
-      {logo.marker && (
+      {logo.marker && !hideAnnotations && (
         <span
           style={{
             marginLeft: 4,
@@ -95,7 +97,7 @@ export function LogoChip({ logo, baseSize = 28, uniform = false }: LogoChipProps
           {logo.marker}
         </span>
       )}
-      {logo.detailNumber != null && (
+      {logo.detailNumber != null && !hideAnnotations && (
         <span
           className="deck-body absolute flex items-center justify-center rounded-full"
           style={{
