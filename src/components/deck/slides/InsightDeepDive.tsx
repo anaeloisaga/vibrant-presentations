@@ -8,6 +8,8 @@ export interface DeepDivePoint {
   body: string;
   /** Optional brand logos shown next to the title (e.g. partner refs). */
   logos?: { src: string; alt: string }[];
+  /** Optional callout footnote, rendered as an italic note below the body. */
+  callout?: string;
 }
 
 export interface DeepDiveInsight {
@@ -266,6 +268,14 @@ export function InsightDeepDive({ insight: i }: Props) {
                   >
                     {p.body}
                   </p>
+                  {p.callout && (
+                    <p
+                      className="deck-body mt-3"
+                      style={{ fontSize: 16, lineHeight: 1.35, color: "#8A8F99", fontStyle: "italic" }}
+                    >
+                      {p.callout}
+                    </p>
+                  )}
                 </div>
               </motion.div>
             </div>
