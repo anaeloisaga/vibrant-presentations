@@ -293,6 +293,20 @@ function Deck() {
           </span>
         </div>
       </div>
+
+      {/* Sign out (bottom-right) */}
+      <button
+        onClick={() => supabase.auth.signOut()}
+        className="fixed bottom-6 right-6 z-50 px-3 py-1.5 rounded-full text-xs backdrop-blur transition-colors hover:bg-white/10"
+        style={{
+          backgroundColor: "rgba(10, 14, 26, 0.6)",
+          border: "1px solid rgba(251, 246, 233, 0.12)",
+          color: "var(--deck-muted)",
+        }}
+        aria-label="Sign out"
+      >
+        Sign out
+      </button>
     </div>
   );
 }
