@@ -19,7 +19,7 @@ import axleHero from "@/assets/insights/axle-hero.png";
 import octopusBg from "@/assets/insights/octopus-bg.png";
 import baseBg from "@/assets/insights/base-bg.png";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/_authenticated/")({
   head: () => ({
     meta: [
       { title: "Energy competitor analysis — Flexa" },
