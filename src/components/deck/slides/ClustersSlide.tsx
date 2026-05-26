@@ -50,7 +50,6 @@ export function ClustersSlide() {
           className="deck-body flex items-center justify-end gap-3 mt-5 px-16"
           style={{ color: "var(--deck-muted)", fontSize: 18 }}
         >
-          <span>Detailed in the following</span>
           <span
             className="flex items-center justify-center rounded-full"
             style={{
@@ -66,6 +65,7 @@ export function ClustersSlide() {
           >
             x
           </span>
+          <span>Detailed in the following</span>
         </div>
       </div>
 
