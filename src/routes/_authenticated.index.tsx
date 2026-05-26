@@ -75,8 +75,9 @@ const INSIGHTS: DeepDiveInsight[] = [
       },
       {
         icon: ShieldCheck,
-        title: "Backup sells the install",
+        title: "Backup sells the install*",
         body: "Outage protection on Texas's unstable grid sells the install — once in the home, Base owns the asset and its full optimization upside.",
+        callout: "*Not as big in Germany but still sells",
       },
     ],
   },
