@@ -3,7 +3,7 @@ import { KineticHeadline } from "../kinetic/KineticHeadline";
 import flexaBg from "@/assets/insights/flexa-bg.jpg";
 
 const POINTS = [
-  "Flexibility and optimization are becoming increasingly crowded spaces. We're well-positioned, but we need to keep pushing to capture more of it.",
+  "The flexibility and optimization space is getting crowded — we're moving in the right direction, but we also have to deliver now.",
   "We should keep working towards multi-market revenue stacking, as the real value lies there.",
   "We should keep working towards leveraging partnerships to integrate deeper into the energy value chain and expand into new segments.",
 ];

@@ -66,7 +66,7 @@ const INSIGHTS: DeepDiveInsight[] = [
       {
         icon: Wrench,
         title: "Full-stack control, direct dispatch",
-        body: "Owning hardware, install and ERCOT market access end-to-end lets Base optimize dispatch directly — no third parties between the battery and the wholesale market.",
+        body: "Owning hardware, installation and ERCOT market access end-to-end lets Base optimize dispatch directly — no third parties between the battery and the wholesale market.",
       },
       {
         icon: DollarSign,
@@ -93,7 +93,7 @@ const INSIGHTS: DeepDiveInsight[] = [
       {
         icon: TrendingUp,
         title: "Multi-market revenue stacking",
-        body: "Axle participates across UK and French flexibility and wholesale markets simultaneously, layering revenues on the same asset — with assets auto-registered as new markets open.",
+        body: "Axle participates across UK and French flexibility and wholesale markets simultaneously, layering revenues on the same asset as new markets open.",
       },
       {
         icon: Cloud,
