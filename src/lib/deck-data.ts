@@ -36,6 +36,8 @@ export interface Logo {
   image?: string;
   /** small superscript marker shown next to the chip (e.g. "*", "**") */
   marker?: string;
+  /** small grey badge number — flags the logo as detailed later in the deck */
+  detailNumber?: number;
 }
 
 export const CLUSTERS: Record<Cluster, { label: string; description: string; accent: string; footnote?: string }> = {
@@ -76,14 +78,14 @@ export const LOGOS: Logo[] = [
   { name: "Tibber", cluster: "retailer", weight: 1.1, color: "#28C8C8", image: tibberLogo },
 
   // Optimizer
-  { name: "axle", cluster: "optimizer", weight: 1.15, color: "#E64545", image: axleLogo },
+  { name: "axle", cluster: "optimizer", weight: 1.15, color: "#E64545", image: axleLogo, detailNumber: 2 },
   { name: "uplight", cluster: "optimizer", weight: 1.1, color: "#1BB37A", image: uplightLogo },
   { name: "tilt", cluster: "optimizer", weight: 1.0, color: "#2E7AE8", image: tiltLogo },
   { name: "gridX", cluster: "optimizer", weight: 1.0, color: "#1FB8A6", image: gridxLogo, marker: "*" },
   { name: "Beebop", cluster: "optimizer", weight: 1.1, color: "#0A0E1A", image: beebopLogo, marker: "*" },
 
   // Full-Stack — HW-Led
-  { name: "BASE", cluster: "full-stack", subCluster: "hw-led", weight: 1.05, color: "#0A0E1A", image: baseLogo },
+  { name: "BASE", cluster: "full-stack", subCluster: "hw-led", weight: 1.05, color: "#0A0E1A", image: baseLogo, detailNumber: 1 },
   {
     name: "Lunar Energy",
     cluster: "full-stack",
@@ -112,6 +114,7 @@ export const LOGOS: Logo[] = [
     color: "#D946EF",
     image: octopusLogo,
     marker: "*",
+    detailNumber: 3,
   },
   { name: "amber", cluster: "full-stack", subCluster: "tariff-led", weight: 1.15, color: "#0A0E1A", image: amberLogo },
 ];

@@ -48,6 +48,25 @@ export function LogoChip({ logo, baseSize = 28, uniform = false }: LogoChipProps
             {logo.marker}
           </span>
         )}
+        {logo.detailNumber != null && (
+          <span
+            className="deck-body absolute flex items-center justify-center rounded-full"
+            style={{
+              top: -10,
+              left: -10,
+              width: fontSize * 1.25,
+              height: fontSize * 1.25,
+              fontSize: fontSize * 0.75,
+              fontWeight: 700,
+              backgroundColor: "#8A8F99",
+              color: "#FBF6E9",
+              lineHeight: 1,
+              boxShadow: "0 2px 6px rgba(0,0,0,0.25)",
+            }}
+          >
+            {logo.detailNumber}
+          </span>
+        )}
       </motion.div>
     );
   }
@@ -74,6 +93,25 @@ export function LogoChip({ logo, baseSize = 28, uniform = false }: LogoChipProps
           }}
         >
           {logo.marker}
+        </span>
+      )}
+      {logo.detailNumber != null && (
+        <span
+          className="deck-body absolute flex items-center justify-center rounded-full"
+          style={{
+            top: -10,
+            left: -10,
+            width: fontSize * 1.25,
+            height: fontSize * 1.25,
+            fontSize: fontSize * 0.75,
+            fontWeight: 700,
+            backgroundColor: "#8A8F99",
+            color: "#FBF6E9",
+            lineHeight: 1,
+            boxShadow: "0 2px 6px rgba(0,0,0,0.25)",
+          }}
+        >
+          {logo.detailNumber}
         </span>
       )}
     </motion.div>
