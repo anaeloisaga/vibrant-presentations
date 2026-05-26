@@ -190,7 +190,7 @@ export function ClustersSlide() {
                 }}
               >
                 {LOGOS.filter((l) => l.cluster === cKey).map((logo) => (
-                  <LogoChip key={logo.name} logo={logo} baseSize={44} uniform />
+                  <LogoChip key={logo.name} logo={logo} baseSize={44} uniform hideAnnotations />
                 ))}
               </div>
             )}
