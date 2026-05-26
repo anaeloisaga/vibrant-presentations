@@ -98,7 +98,7 @@ export function InsightDeepDive({ insight: i }: Props) {
           className="flex items-center gap-6"
         >
           <div
-            className="rounded-2xl flex items-center justify-center px-8 py-5 shadow-xl"
+            className="relative rounded-2xl flex items-center justify-center px-8 py-5 shadow-xl"
             style={{ backgroundColor: "var(--deck-surface)", height: 120 }}
           >
             <img
@@ -106,6 +106,27 @@ export function InsightDeepDive({ insight: i }: Props) {
               alt={i.company}
               style={{ height: 60, width: "auto", objectFit: "contain" }}
             />
+            <div
+              aria-hidden
+              style={{
+                position: "absolute",
+                top: -10,
+                left: -10,
+                width: 28,
+                height: 28,
+                borderRadius: "50%",
+                background: "#8A8F99",
+                color: "#FFFFFF",
+                fontSize: 14,
+                fontWeight: 700,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 2px 6px rgba(0,0,0,0.25)",
+              }}
+            >
+              {parseInt(i.number, 10)}
+            </div>
           </div>
           <div>
             <div
