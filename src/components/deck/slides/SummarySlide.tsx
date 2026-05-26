@@ -40,12 +40,6 @@ export function SummarySlide() {
     <div className="relative w-full h-full px-20 pt-16 pb-14 flex flex-col">
       {/* Header */}
       <div className="mb-12">
-        <div
-          className="deck-body uppercase tracking-[0.4em] mb-4"
-          style={{ color: "var(--deck-accent)", fontSize: 20, fontWeight: 600 }}
-        >
-          2 — Summary
-        </div>
         <KineticHeadline
           text="Key insights from competitors"
           style={{ fontSize: 76, lineHeight: 1, color: "var(--deck-text)" }}

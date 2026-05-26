@@ -36,12 +36,6 @@ export function ClustersSlide() {
     <div className="relative w-full h-full">
       {/* Header */}
       <div className="absolute top-10 left-0 right-0 text-center px-16">
-        <div
-          className="deck-body uppercase tracking-[0.4em] mb-3"
-          style={{ color: "var(--deck-accent)", fontSize: 18, fontWeight: 600 }}
-        >
-          1 — Cluster
-        </div>
         <KineticHeadline
           text="4 archetypes, clustered by core activities in the residential space"
           style={{ fontSize: 56, lineHeight: 1.05, color: "var(--deck-text)" }}
