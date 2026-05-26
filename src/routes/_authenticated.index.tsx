@@ -98,8 +98,9 @@ const INSIGHTS: DeepDiveInsight[] = [
       },
       {
         icon: Cloud,
-        title: "Cloud-to-cloud connectivity (C2C will be hard in new markets)",
+        title: "Cloud-to-cloud connectivity*",
         body: "Connects directly to OEM cloud APIs — no gateway, no extra hardware in the home. Dispatch runs entirely server-side, making onboarding frictionless and globally scalable.",
+        callout: "*C2C will be hard in new markets",
       },
       {
         icon: Feather,
