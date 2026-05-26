@@ -8,6 +8,8 @@ export interface DeepDivePoint {
   body: string;
   /** Optional brand logos shown next to the title (e.g. partner refs). */
   logos?: { src: string; alt: string }[];
+  /** Optional callout footnote, rendered as an italic note below the body. */
+  callout?: string;
 }
 
 export interface DeepDiveInsight {
